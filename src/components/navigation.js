@@ -2,9 +2,8 @@ import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import "./App.css";
 
-class App extends Component {
+class Navigation extends Component {
     constructor(props) {
         super(props);
 
@@ -17,8 +16,7 @@ class App extends Component {
                 <Navbar fluid inverse collapseOnSelect style={{ padding: '10px'}}>
                     <Navbar.Header>
                         <Navbar.Brand>
-                                Votewise
-
+                            Votewise
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
@@ -30,4 +28,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Navigation;
