@@ -1,29 +1,28 @@
-import React, { Component, Fragment } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { Nav, Navbar, NavItem } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Navbar } from "react-bootstrap";
+import "./Navigation.css";
 
 class Navigation extends Component {
     constructor(props) {
         super(props);
-
     }
 
     render() {
 
         return (
-            <div className="App container">
-                <Navbar fluid inverse collapseOnSelect style={{ padding: '10px'}}>
+            <fragment>
+            <div className="Navigation container">
+                <Navbar inverse collapseOnSelect>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            Votewise
+                            <a href="/">Votewise</a>
                         </Navbar.Brand>
-                        <Navbar.Toggle />
                     </Navbar.Header>
-
                 </Navbar>
-
             </div>
+                <button className="myButton" />
+            </fragment>
         );
     }
 }

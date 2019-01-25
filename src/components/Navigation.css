@@ -1,0 +1,30 @@
+.Navigation {
+    padding: 30px;
+}
+
+div .Navigation {
+    background-color: black;
+}
+
+.Navigation .navbar-brand {
+    font-weight: bold;
+    font-size: 35px;
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.myButton{
+    background:url(../baseline_add_circle_outline_black_36dp.png) no-repeat;
+    position:relative;
+    left: 46%;
+    margin-top: 50px;
+    cursor:pointer;
+    border:none;
+    width:70px;
+    height:70px;
+    outline: none;
+}
+
+.Navigation a {
+    margin-left: 50px;
+}
