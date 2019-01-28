@@ -1,33 +1,25 @@
-import React, { Component, Fragment } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { Nav, Navbar, NavItem } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import React, {Component} from "react";
 import "./App.css";
+import Navigation from "./components/navigation";
+import Carousel from "./components/Carousel"
+
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-    }
+  }
 
-    render() {
-
-        return (
-            <div className="App container">
-                <Navbar fluid inverse collapseOnSelect style={{ padding: '10px'}}>
-                    <Navbar.Header>
-                        <Navbar.Brand>
-                                Votewise
-
-                        </Navbar.Brand>
-                        <Navbar.Toggle />
-                    </Navbar.Header>
-
-                </Navbar>
-
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Navigation/>
+        <div className="carouselElement">
+          <Carousel/>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

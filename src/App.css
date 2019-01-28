@@ -30,3 +30,8 @@
     transform: rotate(360deg);
   }
 }
+
+.carouselElement{
+  margin-left: 450px;
+  margin-top: 50px;
+}
