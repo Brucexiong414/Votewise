@@ -13,6 +13,11 @@ div .Navigation {
     text-decoration: none;
 }
 
+.Navigation .navbar-brand:hover,
+.Navigation.navbar-brand:focus {
+    background-color: transparent;
+}
+
 .myButton{
     background:url(../baseline_add_circle_outline_black_36dp.png) no-repeat;
     position:relative;
@@ -27,4 +32,16 @@ div .Navigation {
 
 .Navigation a {
     margin-left: 50px;
+}
+
+.Navigation .container a:hover {
+    background-color: black;
+}
+
+.modal-container {
+    position: relative;
+}
+
+.modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
 }
