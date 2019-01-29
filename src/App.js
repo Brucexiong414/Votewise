@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./App.css";
 import Navigation from "./components/navigation";
-import Carousel from "./components/Carousel"
+import ControlledCarousel from "./components/newCarousel";
 
 
 class App extends Component {
@@ -15,11 +15,11 @@ class App extends Component {
       <div>
         <Navigation/>
         <div className="carouselElement">
-          <Carousel/>
+          <ControlledCarousel/>
+          <div/>
         </div>
       </div>
     );
   }
 }
-
 export default App;
