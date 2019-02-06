@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import "./App.css";
 import Navigation from "./components/navigation";
 import MainPage from "./components/mainPage";
-import ControlledCarousel from "./components/newCarousel";
 
 
 class App extends Component {
