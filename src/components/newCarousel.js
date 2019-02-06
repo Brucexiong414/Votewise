@@ -2,6 +2,8 @@ import React, {Component} from "react"
 import {Carousel} from 'react-bootstrap';
 import FoodCard from "./FoodCard";
 import MovieCard from "./MovieCard";
+import MeetingCard from "./meetingCard";
+import TimeCard from "./timeCard"
 import "./newCarousel.css";
 
 class ControlledCarousel extends React.Component {

@@ -1,0 +1,21 @@
+.generalButton{
+    font-size: 25px;
+    height: 100px;
+    margin-left: 40px;
+    width: 200px;
+}
+
+.generalButton:focus{
+    background-color: #E87A7A;
+}
+
+.foodButton{
+    margin-left: 100px;
+}
+
+.buttonGroups{
+    margin-left: 8%;
+    margin-right: 8%;
+    border-bottom: 1px gray solid;
+    padding-bottom: 10px;
+}
