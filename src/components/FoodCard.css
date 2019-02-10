@@ -26,3 +26,23 @@ ul li {
     width: 350px;
     height: 30px;
 }
+
+.modal-container {
+    position: relative;
+}
+
+.modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
+}
+
+.myButton{
+    background:url(../baseline_add_circle_outline_black_36dp.png) no-repeat;
+    position:relative;
+    left: 46%;
+    margin-top: 50px;
+    cursor:pointer;
+    border:none;
+    width:70px;
+    height:70px;
+    outline: none;
+}

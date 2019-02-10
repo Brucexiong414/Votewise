@@ -11,3 +11,13 @@
 .Home .lander p {
     color: #999;
 }
+
+.btn {
+    padding: 20px 50px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: springgreen;
+}

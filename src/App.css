@@ -10,6 +10,16 @@
 }
 
 div .lk {
+   position: relative;
+   text-align: left;
+   font-weight: bold;
+   font-size: 15px;
+   color: transparent;
+   margin: 5px;
+   left: 84%;
+ }
+
+div .lk1 {
   position: relative;
   text-align: left;
   font-weight: bold;
@@ -17,11 +27,13 @@ div .lk {
   color: transparent;
   margin: 5px;
   left: 84%;
+  padding-top: 10px;
 }
 
-.lk a {
+a {
   color: white;
 }
+
 /*
 .Navigation {
   padding: 30px;
