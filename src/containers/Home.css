@@ -12,12 +12,12 @@
     color: #999;
 }
 
-.btn {
+.Home .btn {
     padding: 20px 50px;
     margin-top: 10px;
     font-size: 20px;
 }
 
-.btn:hover {
+.Home .btn:hover {
     background-color: springgreen;
 }
