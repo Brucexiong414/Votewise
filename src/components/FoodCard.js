@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
-import "./FoodCard.css"
+import "./CardStyle.css"
 
 class FoodCard extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class FoodCard extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
-      voteList: ["Dinner          6:30pm"],
+      voteList: ["Dinner               6:30pm"],
       show: false,
       currentTitle: "",
       currentTime: ""

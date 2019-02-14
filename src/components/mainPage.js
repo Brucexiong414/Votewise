@@ -56,8 +56,7 @@ class MainPage extends React.Component {
     } else if (this.state.cardSelected === "time") {
       return (<div><TimeCard/></div>)
     }
-    return <p>Empty Content</p>
-
+    return (<div><FoodCard/></div>)
   }
 }
 
