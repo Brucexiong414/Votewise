@@ -1,16 +1,11 @@
 .generalButton{
     font-size: 25px;
     height: 100px;
-    margin-left: 40px;
-    width: 200px;
+    width: 100%;
 }
 
 .generalButton:focus{
     background-color: #E87A7A;
-}
-
-.foodButton{
-    margin-left: 0px;
 }
 
 .buttonGroups{
