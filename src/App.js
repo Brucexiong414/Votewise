@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Table from './Table';
 import Form from './Form';
+import "./App.css";
 
 class App extends Component {
     state = {
@@ -32,7 +33,7 @@ class App extends Component {
 
         return (
             <div className="container">
-                  <h1>Tonight's Dinner</h1>
+                  <h1 className="eventName">Tonight's Dinner</h1>
                 <p>Please create or vote for your favorite options!</p>
                 <Table
                     detailsData={details}
