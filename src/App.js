@@ -1,89 +1,48 @@
-import React, { Component, Fragment } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { Nav, Navbar, NavItem  } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
-import "./App.css";
-import Routes from "./Routes";
-import { Auth } from "aws-amplify";
-
+import React, { Component } from 'react';
+import Table from './Table';
+import Form from './Form';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+    state = {
+        details: [{name: "Satay", time: "7:30pm", description: "Thai food", currentVote: 4}
+        , {name: "Rand", time: "7:00pm", description: "Bowls @Chef James Bistro", currentVote: 2}]
+    };
 
-      this.state = {
-          isAuthenticated: false,
-          isAuthenticating: true
-      };
-  }
+    updateCounter = index => {
+      const { details } = this.state;
 
-    async componentDidMount() {
-        try {
-            await Auth.currentSession();
-            this.userHasAuthenticated(true);
-        }
-        catch(e) {
-            if (e !== 'No current user') {
-                alert(e);
-            }
-        }
+      // console.log(characters);
 
-        this.setState({ isAuthenticating: false });
+      console.log(details[index]);
+      details[index].currentVote = details[index].currentVote + 1;
+      console.log(details[index]);
+
+      this.setState({
+          details: details
+      });
     }
 
-    userHasAuthenticated = authenticated => {
-        this.setState({ isAuthenticated: authenticated });
+
+    handleSubmit = details => {
+        this.setState({details: [...this.state.details, details]});
     }
 
-    handleLogout = async event => {
-        await Auth.signOut();
+    render() {
+        const { details } = this.state;
 
-        this.userHasAuthenticated(false);
-        this.props.history.push("/login");
+        return (
+            <div className="container">
+                  <h1>Tonight's Dinner</h1>
+                <p>Please create or vote for your favorite options!</p>
+                <Table
+                    detailsData={details}
+                    updateCounter={this.updateCounter}
+                />
+                <h3>Add New</h3>
+                <Form handleSubmit={this.handleSubmit} />
+            </div>
+        );
     }
-
-  render() {
-      const childProps = {
-          isAuthenticated: this.state.isAuthenticated,
-          userHasAuthenticated: this.userHasAuthenticated
-      };
-
-    return (
-        !this.state.isAuthenticating &&
-        <div className="App container">
-            <Navbar fluid inverse collapseOnSelect style={{ padding: '10px'}}>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <Link to="/">
-                            Votewise
-                        </Link>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
-                <Navbar.Collapse>
-                    {this.state.isAuthenticated
-                        ?
-                        <div className="lk1">
-                        <NavItem onClick={this.handleLogout}>Log out</NavItem>
-                        </div>
-                        : <Fragment>
-                            <div className="lk">
-                            <LinkContainer to="/signup">
-                                <NavItem>Signup</NavItem>
-                            </LinkContainer>
-                            <LinkContainer to="/login">
-                                <NavItem>Login</NavItem>
-                            </LinkContainer>
-                            </div>
-                        </Fragment>
-                    }
-                </Navbar.Collapse>
-            </Navbar>
-            <Routes childProps={childProps} />
-        </div>
-    );
-  }
 }
 
-export default withRouter(App);
-
+export default App;

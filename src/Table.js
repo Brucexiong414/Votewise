@@ -15,14 +15,14 @@ const TableHeader = () => {
 }
 
 const TableBody = props => {
-    const rows = props.characterData.map((row, index) => {
+    const rows = props.detailsData.map((row, index) => {
         return (
             <tr key={index}>
                 <td>{row.name}</td>
                 <td>{row.time}</td>
                 <td>{row.description}</td>
                 <td>{row.currentVote}</td>
-                <td><button onClick={() => props.removeCharacter(index)}>Vote</button></td>
+                <td><button onClick={() => props.updateCounter(index)}>Vote</button></td>
             </tr>
         );
     });
@@ -32,12 +32,12 @@ const TableBody = props => {
 
 class Table extends Component {
     render() {
-        const { characterData, removeCharacter } = this.props;
+        const { detailsData, updateCounter } = this.props;
 
         return (
             <table>
                 <TableHeader />
-                <TableBody characterData={characterData} removeCharacter={removeCharacter} />
+                <TableBody detailsData={detailsData} updateCounter={updateCounter} />
             </table>
         );
     }
