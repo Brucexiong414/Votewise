@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Table from './Table';
 import Form from './Form';
-import "./App.css";
+import "./Details.css";
 
-class App extends Component {
+class Details extends Component {
     state = {
         details: [{name: "Satay", time: "7:30pm", description: "Thai food", currentVote: 4}
         , {name: "Rand", time: "7:00pm", description: "Bowls @Chef James Bistro", currentVote: 2}]
@@ -46,4 +46,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Details;
