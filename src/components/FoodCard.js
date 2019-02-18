@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
 import "./FoodCard.css"
+import { API } from "aws-amplify";
 
 class FoodCard extends Component {
   constructor(props) {
@@ -28,8 +29,30 @@ class FoodCard extends Component {
     this.setState({show: false});
   }
 
-  handleSubmit(event) {
+  handleSubmit = async event => {
     event.preventDefault();
+
+    if (this.state.currentTitle.length < 3) {
+      alert('please enter a valid event name');
+      this.setState({
+          currentTitle: "",
+          currentTime: ""
+      });
+
+      return;
+    }
+
+    let timeRegex = /^$|^(([01][0-9])|(2[0-3])):[0-5][0-9]$/;
+
+    if (!timeRegex.test(this.state.currentTime)) {
+        alert('Please use 24h time system in a format HH:MM');
+        this.setState({
+            currentTime: ""
+        });
+
+        return;
+    }
+
     let result = "";
 
     result += this.state.currentTitle;
@@ -43,7 +66,30 @@ class FoodCard extends Component {
       currentTitle: "",
       currentTime: "",
       show: false
-    })
+    });
+
+
+    try {
+          await this.createNote({
+              content: this.state.currentTitle + " at "
+                  + this.state.currentTime
+          });
+      } catch (e) {
+          alert(e);
+          newList.pop();
+          this.setState({
+              voteList: newList,
+              currentTitle: "",
+              currentTime: "",
+              show: false
+          });
+      }
+  }
+
+    createNote(note) {
+        return API.post("votes", "/votes", {
+            body: note
+        });
   }
 
   handleTitleChange(event) {

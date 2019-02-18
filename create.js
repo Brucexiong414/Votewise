@@ -9,7 +9,7 @@ export async function main(event, context) {
         Item: {
             userId: event.requestContext.identity.cognitoIdentityId,
             content: data.content,
-            attachment: data.attachment,
+         //   attachment: data.attachment,
             createdAt: Date.now()
         }
     };

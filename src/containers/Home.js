@@ -17,6 +17,10 @@ export default class Home extends Component {
                                 <LinkContainer to="/main">
                                 <Button>Vote</Button>
                                 </LinkContainer>
+                                <h1></h1>
+                                <LinkContainer to="/history">
+                                    <Button>History</Button>
+                                </LinkContainer>
                             </Fragment>
                         : <p>Sign in to vote for your favorite activity</p>
                     }
