@@ -1,0 +1,16 @@
+user{
+	userID,
+	Events:[Event{
+		chocies[
+			{Name:string, Time: string, Description:string, num:int}
+			{Name:string, Time: string, Description:string, num:int}
+			]
+		}
+		Event{
+		chocies[
+			{Name:string, Time: string, Description:string, num:int}
+			{Name:string, Time: string, Description:string, num:int}
+			]
+		}
+	]	
+}
