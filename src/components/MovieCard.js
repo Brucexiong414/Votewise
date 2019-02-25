@@ -105,11 +105,9 @@ class MovieCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(
-        <LinkContainer to="details">
-          <li>{this.state.voteList[i]}</li>
-        </LinkContainer>
-      )
+      items.push(<Link to={{pathname: "/details", state: {title: "What to watch"}}}>
+        <li>{this.state.voteList[i]}</li>
+      </Link>)
     }
     return (<div>{items}</div>)
   }

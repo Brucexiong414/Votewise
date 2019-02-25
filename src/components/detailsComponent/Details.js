@@ -4,19 +4,18 @@ import Form from './Form';
 import "./Details.css";
 
 class Details extends Component {
-    state = {
+    constructor(props){
+      super(props);
+      this.state = {
         details: [{name: "Satay", time: "7:30pm", description: "Thai food", currentVote: 4}
-        , {name: "Rand", time: "7:00pm", description: "Bowls @Chef James Bistro", currentVote: 2}]
-    };
+          , {name: "Rand", time: "7:00pm", description: "Bowls @Chef James Bistro", currentVote: 2}]
+      }
+    }
 
     updateCounter = index => {
       const { details } = this.state;
 
-      // console.log(characters);
-
-      console.log(details[index]);
       details[index].currentVote = details[index].currentVote + 1;
-      console.log(details[index]);
 
       this.setState({
           details: details
@@ -33,7 +32,7 @@ class Details extends Component {
 
         return (
             <div className="container">
-                  <h1 className="eventName">Tonight's Dinner</h1>
+                  <h1 className="eventName">{this.props.location.state.title}</h1>
                 <p>Please create or vote for your favorite options!</p>
                 <Table
                     detailsData={details}

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
 import "./CardStyle.css"
 import {LinkContainer} from "react-router-bootstrap";
+import {Link, withRouter} from "react-router-dom";
 
 
 class FoodCard extends Component {
@@ -126,9 +127,9 @@ class FoodCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<LinkContainer to="details">
+      items.push(<Link to={{pathname: "/details", state: {title: "What to eat"}}}>
         <li>{this.state.voteList[i]}</li>
-      </LinkContainer>)
+      </Link>)
     }
     return (<div>{items}</div>)
   }

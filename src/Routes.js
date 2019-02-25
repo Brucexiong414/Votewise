@@ -8,7 +8,7 @@ import Signup from "./containers/Signup";
 import MainPage from  "./components/mainPage";
 import Details from "./components/detailsComponent/Details"
 
-export default ({ childProps }) =>
+export default ({ childProps}) =>
     <Switch>
         <AppliedRoute path="/" exact component={Home} props={childProps} />
         <AppliedRoute path="/login" exact component={Login} props={childProps} />
