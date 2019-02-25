@@ -1,6 +1,10 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
+import {Link, withRouter} from "react-router-dom";
+import {LinkContainer} from "react-router-bootstrap";
+
 import "./CardStyle.css"
+import Details from "./detailsComponent/Details"
 
 class MovieCard extends Component {
   constructor(props) {
@@ -101,7 +105,11 @@ class MovieCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<li>{this.state.voteList[i]}</li>)
+      items.push(
+        <LinkContainer to="details">
+          <li>{this.state.voteList[i]}</li>
+        </LinkContainer>
+      )
     }
     return (<div>{items}</div>)
   }

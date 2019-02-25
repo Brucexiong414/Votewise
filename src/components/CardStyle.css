@@ -13,6 +13,7 @@ ul li {
     background-color: #f6f6f6;
     padding: 12px;
     width: 50%;
+    cursor: pointer;
 }
 
 .titleInput{

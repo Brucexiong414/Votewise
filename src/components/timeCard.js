@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
 import "./CardStyle.css"
+import {LinkContainer} from "react-router-bootstrap";
+
 
 class TimeCard extends Component {
   constructor(props) {
@@ -101,7 +103,9 @@ class TimeCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<li>{this.state.voteList[i]}</li>)
+      items.push(<LinkContainer to="details">
+        <li>{this.state.voteList[i]}</li>
+      </LinkContainer>)
     }
     return (<div>{items}</div>)
   }

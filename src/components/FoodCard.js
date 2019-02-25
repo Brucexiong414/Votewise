@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
 import "./CardStyle.css"
+import {LinkContainer} from "react-router-bootstrap";
+
 
 class FoodCard extends Component {
   constructor(props) {
@@ -32,26 +34,26 @@ class FoodCard extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-      if (this.state.currentTitle.length < 3) {
-          alert('please enter a valid event name');
-          this.setState({
-              currentTitle: "",
-              currentTime: ""
-          });
+    if (this.state.currentTitle.length < 3) {
+      alert('please enter a valid event name');
+      this.setState({
+        currentTitle: "",
+        currentTime: ""
+      });
 
-          return;
-      }
+      return;
+    }
 
-      let timeRegex = /^$|^(([01][0-9])|(2[0-3])):[0-5][0-9]$/;
+    let timeRegex = /^$|^(([01][0-9])|(2[0-3])):[0-5][0-9]$/;
 
-      if (!timeRegex.test(this.state.currentTime)) {
-          alert('Please use 24h time system in a format HH:MM');
-          this.setState({
-              currentTime: ""
-          });
+    if (!timeRegex.test(this.state.currentTime)) {
+      alert('Please use 24h time system in a format HH:MM');
+      this.setState({
+        currentTime: ""
+      });
 
-          return;
-      }
+      return;
+    }
 
     let result = "";
 
@@ -124,7 +126,9 @@ class FoodCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<li>{this.state.voteList[i]}</li>)
+      items.push(<LinkContainer to="details">
+        <li>{this.state.voteList[i]}</li>
+      </LinkContainer>)
     }
     return (<div>{items}</div>)
   }
