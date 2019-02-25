@@ -2,6 +2,44 @@
   color: Tomato;
   font-size: 250%;
 }
+/* Buttons
+  =============== */
+.dButton, a.dButton {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: 1px solid #0366EE;
+  border-radius: 4px;
+  background: #0366EE;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  padding: .75rem 1.25rem;
+  margin: 0 0 .5rem 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1; }
+
+.dButton:hover, a.dButton:hover, .dButton:hover, [type=submit]:hover, [type=reset]:hover, [type=button]:hover {
+  border: 1px solid #0250bc;
+  background: #0250bc;
+  color: #ffffff;
+  text-decoration: none; }
+
+.dButton:focus, .dButton:active, a.dButton:focus, a.dButton:active, .dButton:focus, .dButton:active, [type=submit]:focus, [type=submit]:active, [type=reset]:focus, [type=reset]:active, [type=button]:focus, [type=button]:active {
+  border: 1px solid #0250bc;
+  background: #0250bc;
+  color: #ffffff;
+  text-decoration: none; }
+
+.dButton::-moz-focus-inner, a.dButton::-moz-focus-inner, .dButton::-moz-focus-inner, [type=submit]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=button]::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+
 
 /* Forms
   =============== */
@@ -52,7 +90,7 @@ select::-ms-expand {
 [type=range] {
   width: 100%; }
 
-label {
+.dLabel {
   font-weight: 600;
   max-width: 100%;
   display: block;
@@ -84,7 +122,7 @@ textarea.has-error:active {
 
 /* Tables
   =============== */
-table {
+.dTable {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -96,11 +134,11 @@ thead th {
 tfoot th {
   border-top: 2px solid #dedede; }
 
-td {
+.dtd {
   border-bottom: 1px solid #dedede; }
 
-th,
-td {
+.dth,
+.dtd {
   text-align: left;
   padding: .5rem; }
 
@@ -118,58 +156,3 @@ caption {
 @media (min-width: 600px) {
   .contain-table {
     width: 100%; } }
-
-    .muted-button,
-    a.muted-button {
-      background: transparent;
-      border: 1px solid #cdcdcd;
-      color: #4e4e4e; }
-      .muted-button:hover, .muted-button:focus, .muted-button:active,
-      a.muted-button:hover,
-      a.muted-button:focus,
-      a.muted-button:active {
-        color: #4e4e4e;
-        border: 1px solid #818181;
-        background: transparent; }
-
-    .round-button,
-    a.round-button {
-      border-radius: 40px; }
-
-    .square-button,
-    a.square-button {
-      border-radius: 0; }
-
-    .full-button,
-    a.full-button {
-      display: block;
-      width: 100%; }
-
-      .button:hover, a.button:hover, button:hover, [type=submit]:hover, [type=reset]:hover, [type=button]:hover {
-        border: 1px solid #0250bc;
-        background: #0250bc;
-        color: #ffffff;
-        text-decoration: none; }
-
-      .button:focus, .button:active, a.button:focus, a.button:active, button:focus, button:active, [type=submit]:focus, [type=submit]:active, [type=reset]:focus, [type=reset]:active, [type=button]:focus, [type=button]:active {
-        border: 1px solid #0250bc;
-        background: #0250bc;
-        color: #ffffff;
-        text-decoration: none; }
-
-      .button::-moz-focus-inner, a.button::-moz-focus-inner, button::-moz-focus-inner, [type=submit]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=button]::-moz-focus-inner {
-        border: 0;
-        padding: 0; }
-
-      .accent-button,
-      a.accent-button {
-        color: #ffffff;
-        border: 1px solid #29de7d;
-        background: #29de7d; }
-        .accent-button:hover, .accent-button:focus, .accent-button:active,
-        a.accent-button:hover,
-        a.accent-button:focus,
-        a.accent-button:active {
-          color: #ffffff;
-          border: 1px solid #1cb864;
-          background: #1cb864; }

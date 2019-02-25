@@ -34,25 +34,25 @@ class Form extends Component {
 
         return (
             <form onSubmit={this.onFormSubmit}>
-                <label>Name</label>
+                <label className="dLabel">Name</label>
                 <input
                     type="text"
                     name="name"
                     value={name}
                     onChange={this.handleChange} />
-                <label>Time</label>
+                <label className="dLabel">Time</label>
                 <input
                     type="text"
                     name="time"
                     value={time}
                     onChange={this.handleChange} />
-                <label>Description</label>
+                <label className="dLabel">Description</label>
                 <input
                     type="text"
                     name="description"
                     value={description}
                     onChange={this.handleChange} />
-                <button type="submit">
+                <button className="dButton" type="submit">
                     Submit
                 </button>
             </form>
