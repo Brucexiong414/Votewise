@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Table from './Table';
 import Form from './Form';
 import "./Details.css";
-import "./detailsPage.css";
 
 class Details extends Component {
     state = {
