@@ -28,8 +28,31 @@ class FoodCard extends Component {
     this.setState({show: false});
   }
 
+
   handleSubmit(event) {
     event.preventDefault();
+
+      if (this.state.currentTitle.length < 3) {
+          alert('please enter a valid event name');
+          this.setState({
+              currentTitle: "",
+              currentTime: ""
+          });
+
+          return;
+      }
+
+      let timeRegex = /^$|^(([01][0-9])|(2[0-3])):[0-5][0-9]$/;
+
+      if (!timeRegex.test(this.state.currentTime)) {
+          alert('Please use 24h time system in a format HH:MM');
+          this.setState({
+              currentTime: ""
+          });
+
+          return;
+      }
+
     let result = "";
 
     result += this.state.currentTitle;

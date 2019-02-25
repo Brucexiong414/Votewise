@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/serverless-stack-demo-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/votes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/votes-app-api" vcs="Git" />
   </component>
 </project>
