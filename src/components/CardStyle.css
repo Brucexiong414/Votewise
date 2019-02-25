@@ -47,3 +47,8 @@ ul li {
     height:70px;
     outline: none;
 }
+
+.myButton:hover{
+    background:url(../baseline_add_circle_outline_black_36dp.png) no-repeat;
+    border:none
+}
