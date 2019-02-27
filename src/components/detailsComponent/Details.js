@@ -16,10 +16,13 @@ class Details extends Component {
       const { details } = this.state;
 
       details[index].currentVote = details[index].currentVote + 1;
+      // sort by current vote
+      details.sort((a, b) => b.currentVote - a.currentVote)
 
       this.setState({
           details: details
       });
+
     }
 
 
