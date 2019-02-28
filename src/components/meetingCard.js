@@ -5,7 +5,6 @@ import {LinkContainer} from "react-router-bootstrap";
 import {Link, withRouter} from "react-router-dom";
 
 
-
 class MeetingCard extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +60,7 @@ class MeetingCard extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className="VoteList">
           {this.renderItems()}
         </ul>
         <div className="modal-container">
@@ -105,8 +104,8 @@ class MeetingCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<Link to={{pathname: "/details", state: {title: "When to meet"}}}>
-        <li>{this.state.voteList[i]}</li>
+      items.push(<Link to={{pathname: "/details", state: {title: "Meeting", eventTitle: this.state.voteList[i]}}}>
+        <li className="listItemVote">{this.state.voteList[i]}</li>
       </Link>)
     }
     return (<div>{items}</div>)

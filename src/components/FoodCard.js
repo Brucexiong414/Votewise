@@ -83,7 +83,7 @@ class FoodCard extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className = "VoteList">
           {this.renderItems()}
         </ul>
         <div className="modal-container">
@@ -127,8 +127,8 @@ class FoodCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<Link to={{pathname: "/details", state: {title: "What to eat"}}}>
-        <li>{this.state.voteList[i]}</li>
+      items.push(<Link to={{pathname: "/details", state: {title: "Food", eventTitle: this.state.voteList[i]}}}>
+        <li className = "listItemVote">{this.state.voteList[i]}</li>
       </Link>)
     }
     return (<div>{items}</div>)
