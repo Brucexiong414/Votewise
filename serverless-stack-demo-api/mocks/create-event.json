@@ -1,0 +1,15 @@
+{
+  "body": {
+    "event": "dinner tommorrow",
+    "choices": {
+      "name": "hello world",
+      "time": "08:50",
+      "num": 5
+    }
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}
