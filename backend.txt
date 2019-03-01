@@ -1,0 +1,32 @@
+learn to integrate Amazon cognito userpool and identity
+pool with Amazon dynamodb and created some backend API such as
+create and list.
+
+Figure out the JSON structure of create http request to database/{event}
+{
+  "body": {
+    "choices": {
+      "name": "hello world",
+      "time": "08:50",
+      "num":5
+    }
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}
+
+and list
+
+{
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}
+
+which produces the following json response from http request to database
+{"userId":"USER-SUB-1234","choices":{"name":"hello world","time":"08:50","num":5},"createdAt":1551424841253}
