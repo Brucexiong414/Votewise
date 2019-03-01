@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a842cf15-a9aa-4ce9-b45a-62a92277bdbe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serverless-stack-demo-api" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverless-stack-demo-api" beforeDir="false" afterPath="$PROJECT_DIR$/serverless-stack-demo-api" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless-stack-demo-api/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless-stack-demo-api/LICENSE" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless-stack-demo-api/README.md" beforeDir="false" />
@@ -28,21 +26,6 @@
       <change beforePath="$PROJECT_DIR$/serverless-stack-demo-api/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/serverless-stack-demo-api/serverless.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless-stack-demo-api/tests/billing.test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless-stack-demo-api/update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/create.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/get.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/libs/dynamodb-lib.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/libs/response-lib.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/mocks/create-event.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/mocks/get-event.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/mocks/list-event.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/serverless.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/webpack.config.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -433,12 +416,12 @@
       <workItem from="1548378939669" duration="6181000" />
       <workItem from="1549747839410" duration="11717000" />
       <workItem from="1550524471923" duration="702000" />
-      <workItem from="1550806579044" duration="23209000" />
+      <workItem from="1550806579044" duration="23400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44738000" />
+    <option name="totallyTimeSpent" value="44929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
