@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
 import "./CardStyle.css"
+import { API } from "aws-amplify";
 
 class FoodCard extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class FoodCard extends Component {
   }
 
 
-  handleSubmit(event) {
+  handleSubmit= async event => {
     event.preventDefault();
 
       if (this.state.currentTitle.length < 3) {
@@ -67,6 +68,22 @@ class FoodCard extends Component {
       currentTime: "",
       show: false
     })
+
+      try {
+          await this.createEvent({
+              event: this.state.voteList[this.state.voteList.length - 1],
+              choices: {}
+          });
+      } catch (e) {
+          alert(e);
+//        this.setState({ isLoading: false });
+      }
+  }
+
+    createEvent(vote) {
+        return API.post("votes", "/votes", {
+            body: vote
+        });
   }
 
   handleTitleChange(event) {

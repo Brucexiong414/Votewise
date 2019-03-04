@@ -72,10 +72,95 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./list.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./create.js");
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./create.js":
+/*!*******************!*\
+  !*** ./create.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.main = undefined;
+
+var _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ "babel-runtime/regenerator");
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = __webpack_require__(/*! babel-runtime/helpers/asyncToGenerator */ "babel-runtime/helpers/asyncToGenerator");
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var main = exports.main = function () {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(event, context) {
+    var params;
+    return _regenerator2.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            // const data = JSON.parse(event.body);
+            params = {
+              TableName: "votes",
+              Item: {
+                userId: event.requestContext.identity.cognitoIdentityId,
+                event: event.body.event,
+                content: event.body.choices,
+                createdAt: Date.now()
+              }
+            };
+            _context.prev = 1;
+            _context.next = 4;
+            return dynamoDbLib.call("put", params);
+
+          case 4:
+            return _context.abrupt("return", (0, _responseLib.success)(params.Item));
+
+          case 7:
+            _context.prev = 7;
+            _context.t0 = _context["catch"](1);
+
+            console.log(_context.t0);
+            return _context.abrupt("return", (0, _responseLib.failure)({ status: false }));
+
+          case 11:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, this, [[1, 7]]);
+  }));
+
+  return function main(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+__webpack_require__(/*! source-map-support/register */ "source-map-support/register");
+
+var _uuid = __webpack_require__(/*! uuid */ "uuid");
+
+var _uuid2 = _interopRequireDefault(_uuid);
+
+var _dynamodbLib = __webpack_require__(/*! ./libs/dynamodb-lib */ "./libs/dynamodb-lib.js");
+
+var dynamoDbLib = _interopRequireWildcard(_dynamodbLib);
+
+var _responseLib = __webpack_require__(/*! ./libs/response-lib */ "./libs/response-lib.js");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
 
 /***/ "./libs/dynamodb-lib.js":
 /*!******************************!*\
@@ -156,92 +241,6 @@ function buildResponse(statusCode, body) {
 
 /***/ }),
 
-/***/ "./list.js":
-/*!*****************!*\
-  !*** ./list.js ***!
-  \*****************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.main = undefined;
-
-var _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ "babel-runtime/regenerator");
-
-var _regenerator2 = _interopRequireDefault(_regenerator);
-
-var _asyncToGenerator2 = __webpack_require__(/*! babel-runtime/helpers/asyncToGenerator */ "babel-runtime/helpers/asyncToGenerator");
-
-var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
-
-var main = exports.main = function () {
-  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(event, context) {
-    var params, result;
-    return _regenerator2.default.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            params = {
-              TableName: "votes",
-              // 'KeyConditionExpression' defines the condition for the query
-              // - 'userId = :userId': only return items with matching 'userId'
-              //   partition key
-              // 'ExpressionAttributeValues' defines the value in the condition
-              // - ':userId': defines 'userId' to be Identity Pool identity id
-              //   of the authenticated user
-              KeyConditionExpression: "userId = :userId",
-              ExpressionAttributeValues: {
-                ":userId": event.requestContext.identity.cognitoIdentityId
-              }
-            };
-            _context.prev = 1;
-            _context.next = 4;
-            return dynamoDbLib.call("query", params);
-
-          case 4:
-            result = _context.sent;
-
-            console.log(result);
-            // Return the matching list of items in response body
-            return _context.abrupt("return", (0, _responseLib.success)(result.Items));
-
-          case 9:
-            _context.prev = 9;
-            _context.t0 = _context["catch"](1);
-            return _context.abrupt("return", (0, _responseLib.failure)({ status: false }));
-
-          case 12:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, this, [[1, 9]]);
-  }));
-
-  return function main(_x, _x2) {
-    return _ref.apply(this, arguments);
-  };
-}();
-
-__webpack_require__(/*! source-map-support/register */ "source-map-support/register");
-
-var _dynamodbLib = __webpack_require__(/*! ./libs/dynamodb-lib */ "./libs/dynamodb-lib.js");
-
-var dynamoDbLib = _interopRequireWildcard(_dynamodbLib);
-
-var _responseLib = __webpack_require__(/*! ./libs/response-lib */ "./libs/response-lib.js");
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-
 /***/ "aws-sdk":
 /*!**************************!*\
   !*** external "aws-sdk" ***!
@@ -295,7 +294,18 @@ module.exports = require("babel-runtime/regenerator");
 
 module.exports = require("source-map-support/register");
 
+/***/ }),
+
+/***/ "uuid":
+/*!***********************!*\
+  !*** external "uuid" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("uuid");
+
 /***/ })
 
 /******/ })));
-//# sourceMappingURL=list.js.map
+//# sourceMappingURL=create.js.map
