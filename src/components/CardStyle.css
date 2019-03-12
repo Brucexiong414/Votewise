@@ -9,12 +9,14 @@
 .listItemVote{
     border: 1px solid #ddd;
     margin-top: 10px;
-    margin-left:20%;
+    margin-left:10%;
+    margin-right:10%;
     background-color: #f6f6f6;
     padding: 12px;
-    width: 50%;
+    width: 80%;
     cursor: pointer;
-    color:black;
+    color: #2a334f;
+    font-size: 12pt;
 }
 
 .titleInput{

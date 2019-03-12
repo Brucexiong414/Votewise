@@ -2,11 +2,12 @@
     font-size: 25px;
     height: 100px;
     width: 100%;
-    background-color: #64b7ff;
+    background-color: #757575;
+    color: white;
 }
 
 .generalButton:focus{
-    background-color: red;
+    background-color: #df6124;
 }
 
 .buttonGroups{
