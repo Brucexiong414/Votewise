@@ -7,8 +7,7 @@ class Details extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      details: [{name: "Satay", time: "7:30pm", description: "Thai food", currentVote: 4}
-        , {name: "Rand", time: "7:00pm", description: "Bowls @Chef James Bistro", currentVote: 2}]
+      details: []
     }
   }
 
