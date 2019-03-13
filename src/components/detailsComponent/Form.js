@@ -35,7 +35,7 @@ class Form extends Component {
         return (
             <form onSubmit={this.onFormSubmit}>
                 <label className="dLabel">Name</label>
-                <input
+                <input className= "inputItem"
                     type="text"
                     name="name"
                     value={name}

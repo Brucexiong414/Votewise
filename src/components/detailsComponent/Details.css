@@ -7,7 +7,6 @@
     color: Tomato;
     font-size: 20px;
 }
-
 /* Buttons
   =============== */
 .dButton, a.dButton {
@@ -60,8 +59,8 @@
     background: transparent;
     margin-bottom: .5rem;
     font-size: 1rem;
-    width: 50%;
-    max-width: 50%;
+    width: 100%;
+    max-width: 100%;
     line-height: 1;
 }
 
