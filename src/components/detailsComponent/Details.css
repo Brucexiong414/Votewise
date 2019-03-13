@@ -1,11 +1,15 @@
 .eventName {
     color: Tomato;
-    font-size: 250%;
+    font-size: 150%;
+    background-color: Grey;
+    width: 10%;
+    text-align: center;
+    color: white;
 }
 
 .eventTitle {
     color: Tomato;
-    font-size: 20px;
+    font-size: 300%;
 }
 /* Buttons
   =============== */
