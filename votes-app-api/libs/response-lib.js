@@ -7,6 +7,8 @@ export function failure(body) {
 }
 
 function buildResponse(statusCode, body) {
+  console.log(JSON.stringify(body));
+  console.log(body);
   return {
     statusCode: statusCode,
     headers: {
@@ -14,5 +16,5 @@ function buildResponse(statusCode, body) {
       "Access-Control-Allow-Credentials": true
     },
     body: JSON.stringify(body)
-  };
+};
 }
