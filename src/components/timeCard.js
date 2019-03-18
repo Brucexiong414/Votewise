@@ -3,7 +3,7 @@ import {Modal} from 'react-bootstrap';
 import "./CardStyle.css"
 import {LinkContainer} from "react-router-bootstrap";
 import {Link, withRouter} from "react-router-dom";
-
+import { API } from "aws-amplify";
 
 class TimeCard extends Component {
   constructor(props) {
@@ -16,12 +16,30 @@ class TimeCard extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
-      voteList: ["Decide a time         5:30pm"],
+      voteList: [],
       show: false,
       currentTitle: "",
       currentTime: ""
     }
   }
+
+    async componentDidMount() {
+        // if (!this.props.isAuthenticated) {
+        //     return;
+        // }
+
+        try {
+            const votes = await this.votes();
+            console.log(votes);
+            for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
+                if (votes[i].category === "time") {
+                    this.state.voteList.push(votes[i].event);
+                }
+            }
+        } catch (e) {
+            alert(e);
+        }
+    }
 
   handleShow() {
     this.setState({show: true});
@@ -31,7 +49,7 @@ class TimeCard extends Component {
     this.setState({show: false});
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
     let result = "";
 
@@ -47,7 +65,34 @@ class TimeCard extends Component {
       currentTime: "",
       show: false
     })
+
+      try {
+          await this.createEvent({
+              event: this.state.voteList[this.state.voteList.length - 1],
+              category: "time"
+          });
+      } catch (e) {
+          alert(e);
+      }
   }
+
+    votes() {
+        let v = API.get("votes", "/votes");
+        // v.then(result => {
+        //     console.log(result);
+        // })
+        return v;
+    }
+
+    createEvent(vote) {
+        let v = API.post("votes", "/votes", {
+            body: vote
+        });
+        // v.then(result => {
+        //   console.log(result);
+        // })
+        return v;
+    }
 
   handleTitleChange(event) {
     this.setState({currentTitle: event.target.value});
@@ -104,7 +149,7 @@ class TimeCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<Link to={{pathname: "/details", state: {title: "Time", eventTitle: this.state.voteList[i]}}}>
+      items.push(<Link key={i} to={{pathname: "/details", state: {title: "Time", eventTitle: this.state.voteList[i]}}}>
         <li className = "listItemVote">{this.state.voteList[i]}</li>
       </Link>)
     }

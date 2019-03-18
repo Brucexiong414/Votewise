@@ -10,7 +10,8 @@ export async function main(event, context) {
     Item: {
       userId: event.requestContext.identity.cognitoIdentityId,
       event: data.event,
-      content: data.choices,
+      choices: data.choices,
+      category: data.category,
       createdAt: Date.now()
     }
   };

@@ -1,10 +1,10 @@
 {
   "body": {
-    "event": "dinner tommorrow",
+    "event": "lunch tommorrow",
     "choices": {
-      "name": "hello world",
-      "time": "08:50",
-      "num": 5
+      "name": "hello world1",
+      "time": "09:50",
+      "num": 3
     }
   },
   "requestContext": {
