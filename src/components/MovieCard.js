@@ -20,7 +20,8 @@ class MovieCard extends Component {
       voteList: [],
       show: false,
       currentTitle: "",
-      currentTime: ""
+      currentTime: "",
+      isLoading: true
     }
   }
 
@@ -31,12 +32,16 @@ class MovieCard extends Component {
 
         try {
             const votes = await this.votes();
-            console.log(votes);
+            let items = [];
             for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
                 if (votes[i].category === "movie") {
-                    this.state.voteList.push(votes[i].event);
+                    items.push(votes[i].event);
                 }
             }
+            this.setState({
+                voteList: items,
+                isLoading: false
+            });
         } catch (e) {
             alert(e);
         }
@@ -105,6 +110,7 @@ class MovieCard extends Component {
 
   render() {
     return (
+        this.state.isLoading ? <div>is Loading...</div> :
       <div>
         <ul className = "VoteList">
           {this.renderItems()}

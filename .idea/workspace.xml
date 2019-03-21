@@ -5,18 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FoodCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FoodCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MovieCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/meetingCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/meetingCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/timeCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/timeCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/.serverless/cloudformation-template-update-stack.json" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/.serverless/cloudformation-template-update-stack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/.serverless/serverless-state.json" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/.serverless/serverless-state.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/.serverless/votes-app-api.zip" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/.serverless/votes-app-api.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/get.js" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/get.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/mocks/create-event.json" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/mocks/create-event.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/mocks/get-event.json" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/mocks/get-event.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/serverless.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +33,8 @@
           <entry key="css" value="15" />
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
-          <entry key="js" value="50" />
-          <entry key="json" value="7" />
+          <entry key="js" value="55" />
+          <entry key="json" value="8" />
           <entry key="md" value="1" />
           <entry key="png" value="1" />
         </counts>
@@ -53,8 +44,8 @@
           <entry key="CSS" value="15" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="2" />
-          <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="50" />
+          <entry key="JSON" value="8" />
+          <entry key="JavaScript" value="55" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -67,7 +58,7 @@
         <counts>
           <entry key="css" value="966" />
           <entry key="html" value="18" />
-          <entry key="js" value="1984" />
+          <entry key="js" value="2277" />
           <entry key="json" value="48" />
           <entry key="yml" value="12" />
         </counts>
@@ -77,7 +68,7 @@
           <entry key="CSS" value="966" />
           <entry key="HTML" value="18" />
           <entry key="JSON" value="48" />
-          <entry key="JavaScript" value="1984" />
+          <entry key="JavaScript" value="2277" />
           <entry key="YAML" value="12" />
         </counts>
       </usages-collector>
@@ -141,15 +132,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -161,29 +143,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/mainPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+            <state relative-caret-position="477">
+              <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FoodCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="102" column="4" selection-start-line="102" selection-start-column="4" selection-end-line="118" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/meetingCard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+            <state relative-caret-position="690">
+              <caret line="169" column="12" lean-forward="true" selection-start-line="169" selection-start-column="12" selection-end-line="169" selection-end-column="12" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -194,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/MovieCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="327">
+              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -203,11 +173,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/timeCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="749">
-              <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+            <state relative-caret-position="272">
+              <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/meetingCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-406">
+              <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -219,7 +201,7 @@
         <entry file="file://$PROJECT_DIR$/votes-app-api/create.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="38" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -230,8 +212,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/votes-app-api/serverless.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+            <state relative-caret-position="511">
+              <caret line="75" column="60" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -257,6 +239,7 @@
       <find>prop</find>
       <find>length</find>
       <find>date</find>
+      <find>event</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -302,11 +285,12 @@
         <option value="$PROJECT_DIR$/votes-app-api/mocks/get-event.json" />
         <option value="$PROJECT_DIR$/votes-app-api/mocks/create-event.json" />
         <option value="$PROJECT_DIR$/votes-app-api/create.js" />
+        <option value="$PROJECT_DIR$/votes-app-api/list.js" />
         <option value="$PROJECT_DIR$/src/components/mainPage.js" />
         <option value="$PROJECT_DIR$/src/components/FoodCard.js" />
-        <option value="$PROJECT_DIR$/src/components/meetingCard.js" />
         <option value="$PROJECT_DIR$/src/components/MovieCard.js" />
         <option value="$PROJECT_DIR$/src/components/timeCard.js" />
+        <option value="$PROJECT_DIR$/src/components/meetingCard.js" />
       </list>
     </option>
   </component>
@@ -331,7 +315,7 @@
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="815" />
+    <option name="height" value="823" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -369,6 +353,12 @@
               <item name="Votewise" type="462c0819:PsiDirectoryNode" />
               <item name="votes-app-api" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Votewise" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Votewise" type="462c0819:PsiDirectoryNode" />
+              <item name="votes-app-api" type="462c0819:PsiDirectoryNode" />
+              <item name="mocks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -421,12 +411,12 @@
       <workItem from="1549747839410" duration="11717000" />
       <workItem from="1550524471923" duration="702000" />
       <workItem from="1550806579044" duration="14961000" />
-      <workItem from="1552796291916" duration="13385000" />
+      <workItem from="1552796291916" duration="21190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49875000" />
+    <option name="totallyTimeSpent" value="57680000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -447,7 +437,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32780084" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32771084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -488,13 +478,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/containers/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -579,9 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/votes-app-api/libs/dynamodb-lib.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/votes-app-api/mocks/get-event.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -598,9 +578,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/votes-app-api/mocks/list-event.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -623,10 +600,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/votes-app-api/libs/response-lib.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/votes-app-api/mocks/list-event.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/votes-app-api/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/votes-app-api/libs/dynamodb-lib.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/votes-app-api/list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="272">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
@@ -635,52 +639,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/votes-app-api/serverless.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+        <state relative-caret-position="511">
+          <caret line="75" column="60" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/mainPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/votes-app-api/create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FoodCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="102" column="4" selection-start-line="102" selection-start-column="4" selection-end-line="118" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/meetingCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="477">
+          <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MovieCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+        <state relative-caret-position="327">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -689,8 +663,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/timeCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+        <state relative-caret-position="272">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/meetingCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-406">
+          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FoodCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="169" column="12" lean-forward="true" selection-start-line="169" selection-start-column="12" selection-end-line="169" selection-end-column="12" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

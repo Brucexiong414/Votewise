@@ -19,7 +19,8 @@ class TimeCard extends Component {
       voteList: [],
       show: false,
       currentTitle: "",
-      currentTime: ""
+      currentTime: "",
+      isLoading: true
     }
   }
 
@@ -30,12 +31,16 @@ class TimeCard extends Component {
 
         try {
             const votes = await this.votes();
-            console.log(votes);
+            let items = [];
             for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
                 if (votes[i].category === "time") {
-                    this.state.voteList.push(votes[i].event);
+                    items.push(votes[i].event);
                 }
             }
+            this.setState({
+                voteList: items,
+                isLoading: false
+            });
         } catch (e) {
             alert(e);
         }
@@ -104,6 +109,7 @@ class TimeCard extends Component {
 
   render() {
     return (
+        this.state.isLoading ? <div>is Loading...</div> :
       <div>
         <ul className = "VoteList">
           {this.renderItems()}

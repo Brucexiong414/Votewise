@@ -2,6 +2,7 @@ import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
+  const data = JSON.parse(event.body);
   const params = {
     TableName: "votes",
     // 'KeyConditionExpression' defines the condition for the query
@@ -10,14 +11,14 @@ export async function main(event, context) {
     // 'ExpressionAttributeValues' defines the value in the condition
     // - ':userId': defines 'userId' to be Identity Pool identity id
     //   of the authenticated user
-    KeyConditionExpression: "userId = :userId",
-    ExpressionAttributeValues: {
-      ":userId": event.requestContext.identity.cognitoIdentityId
-    }
+    // KeyConditionExpression: "userId = :userId or contains(SongTitle, :t)",
+    //   ExpressionAttributeValues: {
+    //    ":userId": event.requestContext.identity.cognitoIdentityId
+    //  }
   };
 
   try {
-    const result = await dynamoDbLib.call("query", params);
+    const result = await dynamoDbLib.call("scan", params);
     console.log(result);
     // Return the matching list of items in response body
     return success(result.Items);

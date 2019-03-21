@@ -12,15 +12,23 @@ class MainPage extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.callback = this.callback.bind(this);
 
     this.state = {
-      cardSelected: "default"
+      cardSelected: "default",
+      isLoading: true
     }
   }
 
   handleClick(input) {
     this.setState({
       cardSelected: input
+    })
+  }
+
+  callback() {
+    this.setState({
+        isLoading: false
     })
   }
 
@@ -47,17 +55,17 @@ class MainPage extends React.Component {
   }
 
   renderCard() {
-    if (this.state.cardSelected === "food") {
-      return (<div><FoodCard/></div>)
-    } else if (this.state.cardSelected === "movie") {
-      return (<div><MovieCard/></div>)
-    } else if (this.state.cardSelected === "meeting") {
-      return (<div><MeetingCard/></div>)
-    } else if (this.state.cardSelected === "time") {
-      return (<div><TimeCard/></div>)
-    }
-    return (<div><FoodCard/></div>)
-  }
+          if (this.state.cardSelected === "food") {
+              return (<div><FoodCard cb={this.callback}/></div>)
+          } else if (this.state.cardSelected === "movie") {
+              return (<div><MovieCard/></div>)
+          } else if (this.state.cardSelected === "meeting") {
+              return (<div><MeetingCard/></div>)
+          } else if (this.state.cardSelected === "time") {
+              return (<div><TimeCard/></div>)
+          }
+          return (<div><FoodCard/></div>)
+      }
 }
 
 export default MainPage;
