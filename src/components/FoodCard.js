@@ -21,7 +21,6 @@ class FoodCard extends Component {
       show: false,
       currentTitle: "",
       currentTime: "",
-        userId:"",
       isLoading: true
     }
   }
@@ -40,12 +39,7 @@ class FoodCard extends Component {
                     items.push(votes[i].event);
                 }
             }
-            // let items2 = [];
-            // for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
-            //     if (votes[i].userId === "") {
-            //
-            //     }
-            // }
+
             this.setState({
                 voteList: items,
                 isLoading: false
@@ -104,14 +98,10 @@ class FoodCard extends Component {
     })
 
       try {
-          let r = await this.createEvent({
+           await this.createEvent({
               event: this.state.voteList[this.state.voteList.length - 1],
               category: "food"
           });
-          this.setState({
-              userId: r.userId
-          })
-          console.log(this.state.userId);
       } catch (e) {
           alert(e);
       }
@@ -148,7 +138,7 @@ class FoodCard extends Component {
           {this.renderItems()}
         </ul>
           <Link style={{backgroundColor: "#FF0000"}}
-                to={{pathname: "/history", state: { userId: this.state.userId }}}>
+                to={{pathname: "/history", state: { userId: this.props.id }}}>
               View History
           </Link>
         <div className="modal-container">

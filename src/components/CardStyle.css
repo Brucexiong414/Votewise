@@ -7,6 +7,19 @@
 
 
 .listItemVote{
+     border: 1px solid #ddd;
+     margin-top: 10px;
+     margin-left:10%;
+     margin-right:10%;
+     background-color: #f6f6f6;
+     padding: 12px;
+     width: 80%;
+     cursor: pointer;
+     color: #2a334f;
+     font-size: 12pt;
+ }
+
+.listItemVote2{
     border: 1px solid #ddd;
     margin-top: 10px;
     margin-left:10%;
@@ -14,7 +27,6 @@
     background-color: #f6f6f6;
     padding: 12px;
     width: 80%;
-    cursor: pointer;
     color: #2a334f;
     font-size: 12pt;
 }

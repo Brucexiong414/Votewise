@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
+import "./CardStyle.css"
 
 export default class History extends Component {
     constructor(props) {
@@ -19,7 +20,8 @@ export default class History extends Component {
 
             let items = [];
             for (let i = 0; i < votes.length; i++) {
-                if (votes[i].userId === this.props.location.state.userId) {
+                if (votes[i].userId === this.props.location.state.userId &&
+                     votes[i].event !== "a") {
                     items.push(votes[i].event);
                 }
             }
@@ -56,7 +58,7 @@ export default class History extends Component {
     renderItems() {
         let items = [];
         for (let i = 0; i < this.state.list.length; i++) {
-            items.push(this.state.list[i]);
+            items.push(<li className = "listItemVote2">{this.state.list[i]}</li>);
         }
         return (<div>{items}</div>)
     }

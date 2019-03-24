@@ -5,6 +5,7 @@ import MovieCard from "./MovieCard";
 import "./mainPage.css"
 import MeetingCard from "./meetingCard";
 import TimeCard from "./timeCard"
+import { API } from "aws-amplify";
 
 
 class MainPage extends React.Component {
@@ -20,11 +21,35 @@ class MainPage extends React.Component {
     }
   }
 
-  handleClick(input) {
+ async handleClick(input) {
+     try {
+         let r = await this.createEvent({
+             event: "a",
+             categories: "food"
+         });
+
+         this.setState({
+             userId: r.userId
+         });
+         console.log(this.state.userId);
+     } catch (e) {
+         alert(e);
+     }
+
     this.setState({
       cardSelected: input
     })
   }
+
+    createEvent(vote) {
+        let v = API.post("votes", "/votes", {
+            body: vote
+        });
+        // v.then(result => {
+        //   console.log(result);
+        // })
+        return v;
+    }
 
   callback(id) {
     this.setState({
@@ -56,15 +81,15 @@ class MainPage extends React.Component {
 
   renderCard() {
           if (this.state.cardSelected === "food") {
-              return (<div><FoodCard cb={this.callback}/></div>)
+              return (<div><FoodCard id={this.state.userId} /></div>)
           } else if (this.state.cardSelected === "movie") {
-              return (<div><MovieCard cb={this.callback}/></div>)
+              return (<div><MovieCard id={this.state.userId} /></div>)
           } else if (this.state.cardSelected === "meeting") {
-              return (<div><MeetingCard cb={this.callback}/></div>)
+              return (<div><MeetingCard id={this.state.userId}/></div>)
           } else if (this.state.cardSelected === "time") {
-              return (<div><TimeCard cb={this.callback}/></div>)
+              return (<div><TimeCard id={this.state.userId}/></div>)
           }
-          return (<div><FoodCard cb={this.callback}/></div>)
+          return (<div><FoodCard id={this.state.userId}/></div>)
       }
 }
 
