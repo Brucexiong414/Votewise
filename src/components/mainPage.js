@@ -16,7 +16,7 @@ class MainPage extends React.Component {
 
     this.state = {
       cardSelected: "default",
-      isLoading: true
+      userId: ""
     }
   }
 
@@ -26,9 +26,9 @@ class MainPage extends React.Component {
     })
   }
 
-  callback() {
+  callback(id) {
     this.setState({
-        isLoading: false
+        userId: id
     })
   }
 
@@ -58,13 +58,13 @@ class MainPage extends React.Component {
           if (this.state.cardSelected === "food") {
               return (<div><FoodCard cb={this.callback}/></div>)
           } else if (this.state.cardSelected === "movie") {
-              return (<div><MovieCard/></div>)
+              return (<div><MovieCard cb={this.callback}/></div>)
           } else if (this.state.cardSelected === "meeting") {
-              return (<div><MeetingCard/></div>)
+              return (<div><MeetingCard cb={this.callback}/></div>)
           } else if (this.state.cardSelected === "time") {
-              return (<div><TimeCard/></div>)
+              return (<div><TimeCard cb={this.callback}/></div>)
           }
-          return (<div><FoodCard/></div>)
+          return (<div><FoodCard cb={this.callback}/></div>)
       }
 }
 

@@ -147,7 +147,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/votes-app-api/dev/1553124839988-2019-03-20T23:33:59.988Z/votes-app-api.zip"
+                "S3Key": "serverless/votes-app-api/dev/1553400414869-2019-03-24T04:06:54.869Z/votes-app-api.zip"
               },
               "FunctionName": "votes-app-api-dev-create",
               "Handler": "create.main",
@@ -183,7 +183,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/votes-app-api/dev/1553124839988-2019-03-20T23:33:59.988Z/votes-app-api.zip"
+                "S3Key": "serverless/votes-app-api/dev/1553400414869-2019-03-24T04:06:54.869Z/votes-app-api.zip"
               },
               "FunctionName": "votes-app-api-dev-list",
               "Handler": "list.main",
@@ -371,7 +371,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1553124840017": {
+          "ApiGatewayDeployment1553400414896": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -599,7 +599,7 @@
           "events": [
             {
               "http": {
-                "path": "votes/{event}",
+                "path": "votes",
                 "method": "get",
                 "cors": true,
                 "authorizer": "aws_iam"
@@ -663,7 +663,7 @@
     "layers": {}
   },
   "package": {
-    "artifactDirectoryName": "serverless/votes-app-api/dev/1553124839988-2019-03-20T23:33:59.988Z",
+    "artifactDirectoryName": "serverless/votes-app-api/dev/1553400414869-2019-03-24T04:06:54.869Z",
     "artifact": ""
   }
 }
