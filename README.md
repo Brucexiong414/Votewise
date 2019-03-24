@@ -17,4 +17,7 @@ The UI is demonstrated in the following paper mockup. The first one is the main 
 The app is using reactJS libarary. So to build the app,
 1. go to the application directory
 2. run 'npm install' in the terminal to install all necessary package.
-3. run 'npm start' so that the web app will show up in the browser at localhost:3000.
+3. go to votes-app-api directory.
+4. run 'serverless' deploy in the terminal.
+5. go to back to the project folder using 'cd ..'.
+6. run 'npm start' so that the web app will show up in the browser at localhost:3000.
