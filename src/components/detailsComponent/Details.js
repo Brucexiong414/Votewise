@@ -27,7 +27,7 @@ class Details extends Component {
 
   handleSubmit = details => {
     console.log(details.name);
-
+ 
     this.setState({details: [...this.state.details, details]});
   }
 

@@ -4,9 +4,6 @@
     <list default="true" id="a842cf15-a9aa-4ce9-b45a-62a92277bdbe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/detailsComponent/Details.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detailsComponent/Details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detailsComponent/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detailsComponent/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/.serverless/cloudformation-template-update-stack.json" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/.serverless/cloudformation-template-update-stack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/votes-app-api/.serverless/serverless-state.json" beforeDir="false" afterPath="$PROJECT_DIR$/votes-app-api/.serverless/serverless-state.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,7 +58,7 @@
         <counts>
           <entry key="css" value="970" />
           <entry key="html" value="18" />
-          <entry key="js" value="3403" />
+          <entry key="js" value="3405" />
           <entry key="json" value="49" />
           <entry key="yml" value="23" />
         </counts>
@@ -71,7 +68,7 @@
           <entry key="CSS" value="970" />
           <entry key="HTML" value="18" />
           <entry key="JSON" value="49" />
-          <entry key="JavaScript" value="3403" />
+          <entry key="JavaScript" value="3405" />
           <entry key="YAML" value="23" />
         </counts>
       </usages-collector>
@@ -158,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/detailsComponent/Details.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+            <state relative-caret-position="256">
+              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -170,10 +167,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/detailsComponent/Form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="1054">
               <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -275,8 +272,8 @@
         <option value="$PROJECT_DIR$/src/components/meetingCard.js" />
         <option value="$PROJECT_DIR$/src/components/MovieCard.js" />
         <option value="$PROJECT_DIR$/src/components/timeCard.js" />
-        <option value="$PROJECT_DIR$/src/components/detailsComponent/Details.js" />
         <option value="$PROJECT_DIR$/src/components/detailsComponent/Form.js" />
+        <option value="$PROJECT_DIR$/src/components/detailsComponent/Details.js" />
       </list>
     </option>
   </component>
@@ -401,12 +398,12 @@
       <workItem from="1550806579044" duration="14961000" />
       <workItem from="1552796291916" duration="21190000" />
       <workItem from="1553398268881" duration="12490000" />
-      <workItem from="1553917781484" duration="2683000" />
+      <workItem from="1553917781484" duration="2981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72854000" />
+    <option name="totallyTimeSpent" value="73152000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -679,20 +676,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/detailsComponent/Details.js">
+    <entry file="file://$PROJECT_DIR$/src/components/detailsComponent/Form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        <state relative-caret-position="1054">
+          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/detailsComponent/Form.js">
+    <entry file="file://$PROJECT_DIR$/src/components/detailsComponent/Details.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+        <state relative-caret-position="256">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
