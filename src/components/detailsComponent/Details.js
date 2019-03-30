@@ -26,6 +26,8 @@ class Details extends Component {
 
 
   handleSubmit = details => {
+    console.log(details.name);
+
     this.setState({details: [...this.state.details, details]});
   }
 
@@ -42,7 +44,8 @@ class Details extends Component {
           updateCounter={this.updateCounter}
         />
         <h3>Add New</h3>
-        <Form handleSubmit={this.handleSubmit}/>
+        <Form handleSubmit={this.handleSubmit}
+              eventTitle={this.props.location.state.eventTitle} />
       </div>
     );
   }

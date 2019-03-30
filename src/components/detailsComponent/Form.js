@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { API } from "aws-amplify";
 
 class Form extends Component {
     constructor(props) {
@@ -22,11 +23,49 @@ class Form extends Component {
         });
     }
 
-    onFormSubmit = (event) => {
+    onFormSubmit = async event => {
         event.preventDefault();
+
+        let timeRegex = /^$|^(([01][0-9])|(2[0-3])):[0-5][0-9]$/;
+
+        if (!timeRegex.test(this.state.time)) {
+            alert('Please use 24h time system in a format HH:MM');
+            this.setState({
+                name: '',
+                time: '',
+                description: '',
+                currentVote: 1
+            });
+
+            return;
+        }
+
+        try {
+            await this.createEvent({
+                event: this.props.eventTitle,
+                choices: {
+                    "name": this.state.name,
+                    "time": this.state.time,
+                    "description": this.state.description,
+                    "currentVote": this.state.currentVote
+                }
+            });
+        } catch (e) {
+            alert(e);
+        }
 
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
+    }
+
+    createEvent(vote) {
+        let v = API.post("votes", "/votes", {
+            body: vote
+        });
+        v.then(result => {
+          console.log(result);
+        })
+        return v;
     }
 
     render() {
