@@ -24,18 +24,40 @@ class TableBody extends Component {
     async handleClick(name, time, description, currentVote, index, e) {
         e.preventDefault();
 
+        let items = [];
+
         try {
+            const votes = await this.votes();
+
+            for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
+                if (votes[i].event === this.props.eventTitle
+                    && votes[i].choices) {
+
+                    let a = votes[i].choices;
+
+                    // items.push(votes[i].choices.map(option => option));
+                    for (let j = 0; j < a.length; j++) {
+                        if (a[j].name === name) {
+                            a[j].currentVote++;
+                        }
+                        items.push(a[j]);
+                    }
+                }
+            }
+
+        } catch (e) {
+            alert(e);
+        }
+
+        try {
+
             await this.createEvent({
                 event: this.props.eventTitle,
                 category: this.props.category.toLowerCase(),
-                choices: {
-                    "name": name,
-                    "time": time,
-                    "description": description,
-                    "currentVote": currentVote + 1
-                }
+                choices: items
             });
         } catch (e) {
+           // console.log(items)
             alert(e);
         }
 
@@ -46,14 +68,15 @@ class TableBody extends Component {
         let v = API.post("votes", "/votes", {
             body: vote
         });
-        v.then(result => {
-            console.log(result);
-        })
+        return v;
+    }
+
+    votes() {
+        let v = API.get("votes", "/votes");
         return v;
     }
 
     render() {
-
             const rows = this.props.detailsData.map((row, index) =>
                 <tr className="dtr" key={index}>
                     <td className="dtd">{row.name}</td>

@@ -8,7 +8,8 @@ class Details extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      details: []
+      details: [],
+      isLoading: true
     }
   }
 
@@ -21,11 +22,17 @@ class Details extends Component {
             for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
                 if (votes[i].event === this.props.location.state.eventTitle
                 && votes[i].choices) {
-               //     console.log(votes[i]);
-                    items.push(votes[i].choices);
+
+                    let a = votes[i].choices;
+
+                    // items.push(votes[i].choices.map(option => option));
+                    for (let j = 0; j < a.length; j++) {
+                        items.push(a[j]);
+                    }
                 }
             }
 
+            console.log(items)
             this.setState({
                 details: items,
                 isLoading: false
@@ -64,6 +71,8 @@ class Details extends Component {
     const {details} = this.state;
 
     return (
+        this.state.isLoading ?
+            <div>isLoading...</div> :
       <div className="container">
         <h1 className="eventName">{this.props.location.state.title}</h1>
         <p className="eventTitle">{this.props.location.state.eventTitle}</p>
