@@ -43,6 +43,7 @@ class Form extends Component {
         try {
             await this.createEvent({
                 event: this.props.eventTitle,
+                category: this.props.category.toLowerCase(),
                 choices: {
                     "name": this.state.name,
                     "time": this.state.time,
@@ -62,9 +63,9 @@ class Form extends Component {
         let v = API.post("votes", "/votes", {
             body: vote
         });
-        v.then(result => {
-          console.log(result);
-        })
+        // v.then(result => {
+        //   console.log(result);
+        // })
         return v;
     }
 
