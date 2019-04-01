@@ -114,7 +114,7 @@ class TimeCard extends Component {
         <ul className = "VoteList">
           {this.renderItems()}
         </ul>
-          <Link style={{backgroundColor: "#FF0000"}}
+          <Link style={{backgroundColor: "tomato"}}
                 to={{pathname: "/history", state: { userId: this.props.id }}}>
               View History
           </Link>
