@@ -50,7 +50,7 @@ class FoodCard extends Component {
                       }
                       leadingVotes.push(votes[i].choices[index].name);
                     } else {
-                      leadingVotes.push(null);
+                      leadingVotes.push("No option created.");
                     }
                 }
             }
