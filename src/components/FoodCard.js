@@ -18,6 +18,7 @@ class FoodCard extends Component {
 
     this.state = {
       voteList: [],
+      leadingVoteLists: [],
       show: false,
       currentTitle: "",
       currentTime: "",
@@ -34,15 +35,30 @@ class FoodCard extends Component {
             const votes = await this.votes();
 
             let items = [];
+            let leadingVotes = [];
             for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
                 if (votes[i].category === "food") {
                     items.push(votes[i].event);
+                    let choices = votes[i].choices;
+                    if (choices) {
+                      var max = -1, index = 0;
+                      for (let j = 0; j < choices.length; j++) {
+                        if (choices[j].currentVote > max) {
+                          max = choices[j].currentVote;
+                          index = j;
+                        }
+                      }
+                      leadingVotes.push(votes[i].choices[index].name);
+                    } else {
+                      leadingVotes.push(null);
+                    }
                 }
             }
 
             this.setState({
                 voteList: items,
-                isLoading: false
+                isLoading: false,
+                leadingVoteLists: leadingVotes
             });
         } catch (e) {
             alert(e);
@@ -137,7 +153,7 @@ class FoodCard extends Component {
         <ul className = "VoteList">
           {this.renderItems()}
         </ul>
-          <Link style={{backgroundColor: "tomato"}}
+          <Link style={{backgroundColor: "#7395AE"}}
                 to={{pathname: "/history", state: { userId: this.props.id }}}>
               View History
           </Link>
@@ -183,7 +199,7 @@ class FoodCard extends Component {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
       items.push(<Link key={i} to={{pathname: "/details", state: {title: "Food", eventTitle: this.state.voteList[i]}}}>
-        <li className = "listItemVote">{this.state.voteList[i]}</li>
+        <li className = "listItemVote">{this.state.voteList[i]} <pre className = "highestVote">{this.state.leadingVoteLists[i]}</pre> </li>
       </Link>)
     }
     return (<div>{items}</div>)

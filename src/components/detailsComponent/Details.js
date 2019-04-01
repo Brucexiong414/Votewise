@@ -49,7 +49,6 @@ class Details extends Component {
 
   updateCounter = index => {
     const {details, isLoading} = this.state;
-
     details[index].currentVote = details[index].currentVote + 1;
     // sort by current vote
     details.sort((a, b) => b.currentVote - a.currentVote)

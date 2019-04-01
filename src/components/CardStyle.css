@@ -4,7 +4,10 @@
     margin-top: 20px;
 }
 
-
+.highestVote{
+  background-color: #F76C6C;
+  color: white;
+}
 
 .listItemVote{
      border: 1px solid #ddd;
