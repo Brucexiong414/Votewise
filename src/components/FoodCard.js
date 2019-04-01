@@ -5,6 +5,8 @@ import {LinkContainer} from "react-router-bootstrap";
 import {Link, withRouter} from "react-router-dom";
 import { API } from "aws-amplify";
 
+import IsLoading from "./isLoading"
+
 
 class FoodCard extends Component {
   constructor(props) {
@@ -148,7 +150,7 @@ class FoodCard extends Component {
 
   render() {
     return (
-        this.state.isLoading ? <div>is Loading...</div> :
+        this.state.isLoading ? <div><IsLoading/></div> :
       <div>
         <ul className = "VoteList">
           {this.renderItems()}

@@ -3,7 +3,9 @@ import {Modal} from 'react-bootstrap';
 import "./CardStyle.css"
 import {LinkContainer} from "react-router-bootstrap";
 import {Link, withRouter} from "react-router-dom";
-import { API } from "aws-amplify";
+import {API} from "aws-amplify";
+import IsLoading from "./isLoading"
+
 
 class TimeCard extends Component {
   constructor(props) {
@@ -24,42 +26,42 @@ class TimeCard extends Component {
     }
   }
 
-    async componentDidMount() {
-        // if (!this.props.isAuthenticated) {
-        //     return;
-        // }
+  async componentDidMount() {
+    // if (!this.props.isAuthenticated) {
+    //     return;
+    // }
 
-        try {
-            const votes = await this.votes();
-            let items = [];
-            let leadingVotes = [];
-            for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
-                if (votes[i].category === "time") {
-                    items.push(votes[i].event);
-                    let choices = votes[i].choices;
-                    if (choices) {
-                      var max = -1, index = 0;
-                      for (let j = 0; j < choices.length; j++) {
-                        if (choices[j].currentVote > max) {
-                          max = choices[j].currentVote;
-                          index = j;
-                        }
-                      }
-                      leadingVotes.push(votes[i].choices[index].name);
-                    } else {
-                      leadingVotes.push("No option created.");
-                    }
-                }
+    try {
+      const votes = await this.votes();
+      let items = [];
+      let leadingVotes = [];
+      for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
+        if (votes[i].category === "time") {
+          items.push(votes[i].event);
+          let choices = votes[i].choices;
+          if (choices) {
+            var max = -1, index = 0;
+            for (let j = 0; j < choices.length; j++) {
+              if (choices[j].currentVote > max) {
+                max = choices[j].currentVote;
+                index = j;
+              }
             }
-            this.setState({
-                voteList: items,
-                isLoading: false,
-                leadingVoteLists: leadingVotes
-            });
-        } catch (e) {
-            alert(e);
+            leadingVotes.push(votes[i].choices[index].name);
+          } else {
+            leadingVotes.push("No option created.");
+          }
         }
+      }
+      this.setState({
+        voteList: items,
+        isLoading: false,
+        leadingVoteLists: leadingVotes
+      });
+    } catch (e) {
+      alert(e);
     }
+  }
 
   handleShow() {
     this.setState({show: true});
@@ -86,33 +88,33 @@ class TimeCard extends Component {
       show: false
     })
 
-      try {
-          await this.createEvent({
-              event: this.state.voteList[this.state.voteList.length - 1],
-              category: "time"
-          });
-      } catch (e) {
-          alert(e);
-      }
+    try {
+      await this.createEvent({
+        event: this.state.voteList[this.state.voteList.length - 1],
+        category: "time"
+      });
+    } catch (e) {
+      alert(e);
+    }
   }
 
-    votes() {
-        let v = API.get("votes", "/votes");
-        // v.then(result => {
-        //     console.log(result);
-        // })
-        return v;
-    }
+  votes() {
+    let v = API.get("votes", "/votes");
+    // v.then(result => {
+    //     console.log(result);
+    // })
+    return v;
+  }
 
-    createEvent(vote) {
-        let v = API.post("votes", "/votes", {
-            body: vote
-        });
-        // v.then(result => {
-        //   console.log(result);
-        // })
-        return v;
-    }
+  createEvent(vote) {
+    let v = API.post("votes", "/votes", {
+      body: vote
+    });
+    // v.then(result => {
+    //   console.log(result);
+    // })
+    return v;
+  }
 
   handleTitleChange(event) {
     this.setState({currentTitle: event.target.value});
@@ -124,50 +126,52 @@ class TimeCard extends Component {
 
   render() {
     return (
-        this.state.isLoading ? <div>is Loading...</div> :
-      <div>
-        <ul className = "VoteList">
-          {this.renderItems()}
-        </ul>
+      this.state.isLoading ? <div>
+          <IsLoading/>
+        </div> :
+        <div>
+          <ul className="VoteList">
+            {this.renderItems()}
+          </ul>
           <Link style={{backgroundColor: "#7395AE"}}
-                to={{pathname: "/history", state: { userId: this.props.id }}}>
-              View History
+                to={{pathname: "/history", state: {userId: this.props.id}}}>
+            View History
           </Link>
-        <div className="modal-container">
-          <button className="myButton" onClick={this.handleShow}/>
-          <Modal
-            show={this.state.show}
-            onHide={this.handleHide}
-            container={this}
-            aria-labelledby="contained-modal-title"
-          >
-            <Modal.Header closeButton onClick={this.handleClose}>
-              <Modal.Title id="contained-modal-title">
-                Create new Vote
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <form onSubmit={this.handleSubmit}>
-                <div>
-                  <label>
-                    Title:
-                    <input className="titleInput" type="text" value={this.state.currentTitle}
-                           onChange={this.handleTitleChange}/>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    Time:
-                    <input className="timeInput" type="text" value={this.state.currentTime}
-                           onChange={this.handleTimeChange}/>
-                  </label>
-                </div>
-                <input type="submit" value="Submit"/>
-              </form>
-            </Modal.Body>
-          </Modal>
+          <div className="modal-container">
+            <button className="myButton" onClick={this.handleShow}/>
+            <Modal
+              show={this.state.show}
+              onHide={this.handleHide}
+              container={this}
+              aria-labelledby="contained-modal-title"
+            >
+              <Modal.Header closeButton onClick={this.handleClose}>
+                <Modal.Title id="contained-modal-title">
+                  Create new Vote
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <form onSubmit={this.handleSubmit}>
+                  <div>
+                    <label>
+                      Title:
+                      <input className="titleInput" type="text" value={this.state.currentTitle}
+                             onChange={this.handleTitleChange}/>
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      Time:
+                      <input className="timeInput" type="text" value={this.state.currentTime}
+                             onChange={this.handleTimeChange}/>
+                    </label>
+                  </div>
+                  <input type="submit" value="Submit"/>
+                </form>
+              </Modal.Body>
+            </Modal>
+          </div>
         </div>
-      </div>
     )
   }
 
@@ -175,7 +179,9 @@ class TimeCard extends Component {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
       items.push(<Link key={i} to={{pathname: "/details", state: {title: "Time", eventTitle: this.state.voteList[i]}}}>
-        <li className = "listItemVote">{this.state.voteList[i]} <pre className = "highestVote">{this.state.leadingVoteLists[i]}</pre> </li>
+        <li className="listItemVote">{this.state.voteList[i]}
+          <pre className="highestVote">{this.state.leadingVoteLists[i]}</pre>
+        </li>
       </Link>)
     }
     return (<div>{items}</div>)

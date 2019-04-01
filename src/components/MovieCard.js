@@ -5,6 +5,8 @@ import {LinkContainer} from "react-router-bootstrap";
 import { API } from "aws-amplify";
 import "./CardStyle.css"
 import Details from "./detailsComponent/Details"
+import IsLoading from "./isLoading"
+
 
 class MovieCard extends Component {
   constructor(props) {
@@ -125,7 +127,7 @@ class MovieCard extends Component {
 
   render() {
     return (
-        this.state.isLoading ? <div>is Loading...</div> :
+        this.state.isLoading ? <div><IsLoading/></div> :
       <div>
         <ul className = "VoteList">
           {this.renderItems()}
