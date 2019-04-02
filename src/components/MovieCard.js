@@ -132,7 +132,7 @@ class MovieCard extends Component {
         <ul className = "VoteList">
           {this.renderItems()}
         </ul>
-          <Link style={{backgroundColor: "#7395AE"}}
+          <Link className="historyLink"
                 to={{pathname: "/history", state: { userId: this.props.id }}}>
               View History
           </Link>
