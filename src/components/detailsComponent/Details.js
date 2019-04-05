@@ -32,7 +32,6 @@ class Details extends Component {
                 }
             }
 
-            console.log(items)
             this.setState({
                 details: items,
                 isLoading: false

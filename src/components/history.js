@@ -14,15 +14,14 @@ export default class History extends Component {
 
     async componentDidMount() {
         console.log(this.props.location.state.userId);
-        console.log("get here");
         try {
             const votes = await this.votes();
 
             let items = [];
             for (let i = 0; i < votes.length; i++) {
                 if (votes[i].userId === this.props.location.state.userId &&
-                     votes[i].event !== "a") {
-                    items.push(votes[i].event);
+                     votes[i].event.includes("-")) {
+                    items.push(votes[i].event.replace(/-/g, ' '));
                 }
             }
 
@@ -58,7 +57,7 @@ export default class History extends Component {
     renderItems() {
         let items = [];
         for (let i = 0; i < this.state.list.length; i++) {
-            items.push(<li className = "listItemVote2">{this.state.list[i]}</li>);
+            items.push(<li key={i} className = "listItemVote2">{this.state.list[i]}</li>);
         }
         return (<div>{items}</div>)
     }

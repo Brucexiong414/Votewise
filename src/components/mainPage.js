@@ -13,7 +13,6 @@ class MainPage extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
-    this.callback = this.callback.bind(this);
 
     this.state = {
       cardSelected: "default",
@@ -25,7 +24,7 @@ class MainPage extends React.Component {
      try {
          let r = await this.createEvent({
              event: "a",
-             categories: "food"
+           //  categories: "food"
          });
 
          this.setState({
@@ -50,12 +49,6 @@ class MainPage extends React.Component {
         // })
         return v;
     }
-
-  callback(id) {
-    this.setState({
-        userId: id
-    })
-  }
 
   render() {
     return (<div>

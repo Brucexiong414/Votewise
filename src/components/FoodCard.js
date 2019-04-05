@@ -113,7 +113,7 @@ class FoodCard extends Component {
       currentTitle: "",
       currentTime: "",
       show: false
-    })
+    });
 
       try {
            await this.createEvent({
@@ -123,6 +123,15 @@ class FoodCard extends Component {
       } catch (e) {
           alert(e);
       }
+
+      try {
+          await this.createEvent({
+              event: this.state.voteList[this.state.voteList.length - 1] + '-',
+          });
+      } catch (e) {
+          alert(e);
+      }
+
   }
 
     votes() {

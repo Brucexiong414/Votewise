@@ -96,6 +96,14 @@ class MeetingCard extends Component {
     } catch (e) {
       alert(e);
     }
+
+      try {
+          await this.createEvent({
+              event: this.state.voteList[this.state.voteList.length - 1] + '-',
+          });
+      } catch (e) {
+          alert(e);
+      }
   }
 
   votes() {
