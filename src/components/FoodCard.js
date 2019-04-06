@@ -108,11 +108,16 @@ class FoodCard extends Component {
 
     let newList = this.state.voteList;
     newList.push(result);
+
+    let temp = this.state.leadingVoteLists;
+    temp.push("No option created.")
+
     this.setState({
       voteList: newList,
       currentTitle: "",
       currentTime: "",
-      show: false
+      show: false,
+        leadingVoteLists: temp
     });
 
       try {
@@ -210,7 +215,10 @@ class FoodCard extends Component {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
       items.push(<Link key={i} to={{pathname: "/details", state: {title: "Food", eventTitle: this.state.voteList[i]}}}>
-        <li className = "listItemVote">{this.state.voteList[i]} <pre className = "highestVote">{this.state.leadingVoteLists[i]}</pre> </li>
+        <li className = "listItemVote">{this.state.voteList[i]}
+        <pre className = "highestVote">{this.state.leadingVoteLists[i]}
+        </pre>
+        </li>
       </Link>)
     }
     return (<div>{items}</div>)

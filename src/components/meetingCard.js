@@ -81,12 +81,18 @@ class MeetingCard extends Component {
 
     let newList = this.state.voteList;
     newList.push(result);
+
+      let temp = this.state.leadingVoteLists;
+      temp.push("No option created.");
+
+
     this.setState({
       voteList: newList,
       currentTitle: "",
       currentTime: "",
-      show: false
-    })
+      show: false,
+        leadingVoteLists: temp
+    });
 
     try {
       await this.createEvent({

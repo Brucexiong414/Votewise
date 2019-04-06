@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
 import "./CardStyle.css"
+import IsLoading from "./isLoading"
 
 export default class History extends Component {
     constructor(props) {
@@ -45,7 +46,7 @@ export default class History extends Component {
             <h1>
                 My History vote
             </h1>
-                {this.state.isLoading ? <div>is Loading...</div> :
+                {this.state.isLoading ? <div><IsLoading/></div> :
                     <ul className = "VoteList">
                         {this.renderItems()}
                     </ul>

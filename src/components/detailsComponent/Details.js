@@ -3,6 +3,7 @@ import Table from './Table';
 import Form from './Form';
 import "./Details.css";
 import { API } from "aws-amplify";
+import IsLoading from "../isLoading"
 
 class Details extends Component {
   constructor(props) {
@@ -70,7 +71,7 @@ class Details extends Component {
 
     return (
         this.state.isLoading ?
-            <div>isLoading...</div> :
+            <div><IsLoading/></div> :
       <div className="container">
         <h1 className="eventName">{this.props.location.state.title}</h1>
         <p className="eventTitle">{this.props.location.state.eventTitle}</p>
