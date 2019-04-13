@@ -20,20 +20,7 @@ class MainPage extends React.Component {
     }
   }
 
- async handleClick(input) {
-     try {
-         let r = await this.createEvent({
-             event: "a",
-           //  categories: "food"
-         });
-
-         this.setState({
-             userId: r.userId
-         });
-         console.log(this.state.userId);
-     } catch (e) {
-         alert(e);
-     }
+ handleClick(input) {
 
     this.setState({
       cardSelected: input
@@ -48,6 +35,22 @@ class MainPage extends React.Component {
         //   console.log(result);
         // })
         return v;
+    }
+
+    async componentDidMount() {
+        try {
+            let r = await this.createEvent({
+                event: "a",
+              //  categories: "food"
+            });
+
+            this.setState({
+                userId: r.userId
+            });
+            console.log(this.state.userId);
+        } catch (e) {
+            alert(e);
+        }
     }
 
   render() {
