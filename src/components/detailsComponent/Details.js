@@ -82,6 +82,7 @@ class Details extends Component {
               updateCounter={this.updateCounter}
               eventTitle={this.props.location.state.eventTitle}
               category={this.props.location.state.title}
+              id={this.props.location.state.userId}
           />
         <h3>Add New</h3>
         <Form handleSubmit={this.handleSubmit}

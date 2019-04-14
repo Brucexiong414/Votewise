@@ -24,9 +24,29 @@ class TableBody extends Component {
     async handleClick(name, time, description, currentVote, index, e) {
         e.preventDefault();
 
+        // check if the user have voted before
+        try {
+            const votes = await this.votes();
+          //  console.log(this.props.id);
+            for (let i = 0; i < votes.length; i++) {
+                if (votes[i].userId === this.props.id &&
+                    votes[i].event === this.props.eventTitle + "+") {
+                    console.log('get here')
+                    alert('You have voted for this event')
+                    return;
+                }
+            }
+        } catch (e) {
+            alert(e);
+        }
+
+        // else if user haven't vote for this event
+
         let items = [];
 
         try {
+            // when user click the vote button
+            // they will be alerted if they already voted. Limit is 1 vote per person
             const votes = await this.votes();
 
             for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
@@ -50,7 +70,6 @@ class TableBody extends Component {
         }
 
         try {
-
             await this.createEvent({
                 event: this.props.eventTitle,
                 category: this.props.category.toLowerCase(),
@@ -58,6 +77,15 @@ class TableBody extends Component {
             });
         } catch (e) {
            // console.log(items)
+            alert(e);
+        }
+
+        try {
+            await this.createEvent({
+                event: this.props.eventTitle + '+',
+            });
+        } catch (e) {
+            // console.log(items)
             alert(e);
         }
 
@@ -100,7 +128,7 @@ class TableBody extends Component {
 class Table extends Component {
 
     render() {
-        const { detailsData, updateCounter, eventTitle, category} = this.props;
+        const { detailsData, updateCounter, eventTitle, category, id} = this.props;
 
         return (
             <table className="dTable">
@@ -109,7 +137,8 @@ class Table extends Component {
                 <TableBody detailsData={detailsData}
                            updateCounter={updateCounter}
                            eventTitle={eventTitle}
-                           category={category}/>
+                           category={category}
+                           id={id}/>
             </table>
         );
     }

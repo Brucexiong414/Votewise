@@ -194,7 +194,8 @@ class MeetingCard extends Component {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
       items.push(<Link key={i}
-                       to={{pathname: "/details", state: {title: "Meeting", eventTitle: this.state.voteList[i]}}}>
+                       to={{pathname: "/details",
+                           state: {title: "Meeting", eventTitle: this.state.voteList[i], userId: this.props.id }}}>
         <li className="listItemVote">{this.state.voteList[i]}
           <pre className="highestVote">{this.state.leadingVoteLists[i]}</pre>
         </li>

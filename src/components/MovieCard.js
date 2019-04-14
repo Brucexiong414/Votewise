@@ -190,7 +190,8 @@ class MovieCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<Link key={i} to={{pathname: "/details", state: {title: "Movie", eventTitle: this.state.voteList[i]}}}>
+      items.push(<Link key={i} to={{pathname: "/details",
+          state: { title: "Movie", eventTitle: this.state.voteList[i], userId: this.props.id  }}}>
       <li className = "listItemVote">{this.state.voteList[i]} <pre className = "highestVote">{this.state.leadingVoteLists[i]}</pre> </li>
       </Link>)
     }
