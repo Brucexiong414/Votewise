@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
 import "./CardStyle.css"
-import {LinkContainer} from "react-router-bootstrap";
-import {Link, withRouter} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { API } from "aws-amplify";
 
 import IsLoading from "./isLoading"
@@ -29,10 +28,6 @@ class FoodCard extends Component {
   }
 
     async componentDidMount() {
-        // if (!this.props.isAuthenticated) {
-        //     return;
-        // }
-
         try {
             const votes = await this.votes();
 
@@ -148,9 +143,6 @@ class FoodCard extends Component {
         let v = API.post("votes", "/votes", {
             body: vote
         });
-        // v.then(result => {
-        //   console.log(result);
-        // })
         return v;
     }
 

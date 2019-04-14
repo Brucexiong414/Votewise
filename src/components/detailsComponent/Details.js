@@ -48,7 +48,7 @@ class Details extends Component {
     }
 
   updateCounter = index => {
-    const {details, isLoading} = this.state;
+    const {details} = this.state;
     details[index].currentVote = details[index].currentVote + 1;
     // sort by current vote
     details.sort((a, b) => b.currentVote - a.currentVote)
@@ -61,14 +61,10 @@ class Details extends Component {
 
 
   handleSubmit = details => {
-    console.log(details);
-
     this.setState({details: [...this.state.details, details]});
-  }
+  };
 
   render() {
-    const {details} = this.state;
-
     return (
         this.state.isLoading ?
             <div><IsLoading/></div> :

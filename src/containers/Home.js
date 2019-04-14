@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./Home.css";
 import { LinkContainer } from "react-router-bootstrap";
-import { ButtonToolbar, Button  } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 export default class Home extends Component {
     render() {
