@@ -1,11 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import "./isLoading.css"
 
 class IsLoading extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (<div className="isLoadingAll">
       <div className="loadingSnippet">

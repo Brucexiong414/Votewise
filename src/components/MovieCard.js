@@ -1,10 +1,8 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
-import {Link, withRouter} from "react-router-dom";
-import {LinkContainer} from "react-router-bootstrap";
+import {Link} from "react-router-dom";
 import { API } from "aws-amplify";
 import "./CardStyle.css"
-import Details from "./detailsComponent/Details"
 import IsLoading from "./isLoading"
 
 
@@ -28,10 +26,6 @@ class MovieCard extends Component {
   }
 
     async componentDidMount() {
-        // if (!this.props.isAuthenticated) {
-        //     return;
-        // }
-
         try {
             const votes = await this.votes();
             let items = [];
@@ -114,9 +108,6 @@ class MovieCard extends Component {
 
     votes() {
         let v = API.get("votes", "/votes");
-        // v.then(result => {
-        //     console.log(result);
-        // })
         return v;
     }
 
@@ -124,9 +115,6 @@ class MovieCard extends Component {
         let v = API.post("votes", "/votes", {
             body: vote
         });
-        // v.then(result => {
-        //   console.log(result);
-        // })
         return v;
     }
 

@@ -103,7 +103,7 @@ class Form extends Component {
     }
 
     render() {
-        const { name, time, description, currentVote} = this.state;
+        const { name, time, description} = this.state;
 
         return (
             <form onSubmit={this.onFormSubmit}>

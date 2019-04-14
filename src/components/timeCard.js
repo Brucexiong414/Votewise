@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
 import "./CardStyle.css"
-import {LinkContainer} from "react-router-bootstrap";
-import {Link, withRouter} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {API} from "aws-amplify";
 import IsLoading from "./isLoading"
 
@@ -27,9 +26,6 @@ class TimeCard extends Component {
   }
 
   async componentDidMount() {
-    // if (!this.props.isAuthenticated) {
-    //     return;
-    // }
 
     try {
       const votes = await this.votes();
@@ -113,9 +109,6 @@ class TimeCard extends Component {
 
   votes() {
     let v = API.get("votes", "/votes");
-    // v.then(result => {
-    //     console.log(result);
-    // })
     return v;
   }
 
@@ -123,9 +116,6 @@ class TimeCard extends Component {
     let v = API.post("votes", "/votes", {
       body: vote
     });
-    // v.then(result => {
-    //   console.log(result);
-    // })
     return v;
   }
 
