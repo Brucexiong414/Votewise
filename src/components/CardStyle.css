@@ -14,13 +14,24 @@
      margin-top: 10px;
      margin-left:10%;
      margin-right:10%;
-     background-color: #f6f6f6;
+
      padding: 12px;
      width: 80%;
      cursor: pointer;
-     color: #2a334f;
+     color: tomato;
      font-size: 12pt;
+     border: none;
+     font-size: 150%;
  }
+
+ .listItemVote:hover{
+   background-color: #f6f6f6;
+ }
+
+ a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
 
 .listItemVote2{
     border: 1px solid #ddd;
