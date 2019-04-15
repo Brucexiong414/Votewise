@@ -5,24 +5,26 @@
     width: 10%;
     text-align: center;
     color: white;
+    font-weight: bold;
 }
 
 .eventTitle {
-    color: Tomato;
+    color: #7FC4C4;
     font-size: 300%;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 /* Buttons
   =============== */
 .dButton, a.dButton {
     -webkit-appearance: none;
     display: inline-block;
-    border: 1px solid #0366EE;
-    border-radius: 4px;
-    background: #0366EE;
+    border-radius: 8px;
+    background: #18AFC7;
     color: #ffffff;
     font-weight: 600;
     font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 100%;
     text-transform: none;
     padding: .75rem 1.25rem;
     margin: 0 0 .5rem 0;
@@ -35,14 +37,14 @@
 
 .dButton:hover, a.dButton:hover, .dButton:hover, [type=submit]:hover, [type=reset]:hover, [type=button]:hover {
     border: 1px solid #0250bc;
-    background: #0250bc;
+    background: #177D9A;
     color: #ffffff;
     text-decoration: none;
 }
 
 .dButton:focus, .dButton:active, a.dButton:focus, a.dButton:active, .dButton:focus, .dButton:active, [type=submit]:focus, [type=submit]:active, [type=reset]:focus, [type=reset]:active, [type=button]:focus, [type=button]:active {
     border: 1px solid #0250bc;
-    background: #0250bc;
+    background: #177D9A;
     color: #ffffff;
     text-decoration: none;
 }
@@ -62,10 +64,11 @@
     outline: none;
     background: transparent;
     margin-bottom: .5rem;
-    font-size: 1rem;
+    font-size: 150%;
     width: 100%;
     max-width: 100%;
     line-height: 1;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 [type=color]:hover, [type=date]:hover, [type=datetime]:hover, [type=datetime-local]:hover, [type=email]:hover, [type=month]:hover, [type=number]:hover, [type=password]:hover, [type=search]:hover, [type=tel]:hover, [type=text]:hover, [type=url]:hover, [type=week]:hover, [type=time]:hover, select:hover, textarea:hover {
@@ -153,6 +156,7 @@ textarea.has-error:active {
     width: 100%;
     max-width: 100%;
     font-size: 150%;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 thead th {

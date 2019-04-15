@@ -19,5 +19,6 @@
 }
 
 .Home .btn:hover {
-    background-color: springgreen;
+    background-color: #696773;
+    color: white;
 }

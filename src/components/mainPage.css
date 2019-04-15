@@ -4,10 +4,13 @@
     width: 100%;
     background-color: #757575;
     color: white;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+    border-radius: 8px;
 }
 
 .generalButton:focus{
-    background-color: #df6124;
+    background-color: #7FC4C4;
 }
 
 .buttonGroups{
