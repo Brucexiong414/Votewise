@@ -20,6 +20,8 @@ class FoodCard extends Component {
     this.state = {
       voteList: [],
       leadingVoteLists: [],
+      leadingNumberLists: [],
+      numberOfOptions: [],
       show: false,
       currentTitle: "",
       currentTime: "",
@@ -33,6 +35,8 @@ class FoodCard extends Component {
 
             let items = [];
             let leadingVotes = [];
+            let leadingNumbers = [];
+            let numbers = [];
             for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
                 if (votes[i].category === "food") {
                     items.push(votes[i].event);
@@ -46,8 +50,12 @@ class FoodCard extends Component {
                         }
                       }
                       leadingVotes.push(votes[i].choices[index].name);
+                      leadingNumbers.push(max);
+                      numbers.push(choices.length);
                     } else {
                       leadingVotes.push("No option created.");
+                      leadingVotes.push(0);
+                      numbers.push(0);
                     }
                 }
             }
@@ -55,7 +63,9 @@ class FoodCard extends Component {
             this.setState({
                 voteList: items,
                 isLoading: false,
-                leadingVoteLists: leadingVotes
+                leadingVoteLists: leadingVotes,
+                leadingNumberLists: leadingNumbers,
+                numberOfOptions: numbers
             });
         } catch (e) {
             alert(e);
@@ -107,12 +117,20 @@ class FoodCard extends Component {
     let temp = this.state.leadingVoteLists;
     temp.push("No option created.")
 
+    let tmp = this.state.leadingNumberLists;
+    tmp.push(0);
+
+    let num = this.state.numberOfOptions;
+    num.push(0);
+
     this.setState({
       voteList: newList,
       currentTitle: "",
       currentTime: "",
       show: false,
-        leadingVoteLists: temp
+      leadingVoteLists: temp,
+      leadingNumberLists: tmp,
+      numberOfOptions: num
     });
 
       try {
@@ -206,11 +224,25 @@ class FoodCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
+      let detail;
+      if (this.state.numberOfOptions[i] > 0) {
+        if (this.state.numberOfOptions[i] > 1) {
+          detail = <pre className = "highestVote">
+          <span className="leadingVoteName">{this.state.leadingVoteLists[i]}</span>:&emsp;<span className="leadingVoteNumber">{this.state.leadingNumberLists[i]}</span> Votes
+          &nbsp;<span className="otherOptions">{this.state.numberOfOptions[i] - 1} other option{this.state.numberOfOptions[i] > 2 ? "s" : ""} available</span>
+          </pre>
+        } else {
+          detail = <pre className = "highestVote">
+          <span className="leadingVoteName">{this.state.leadingVoteLists[i]}</span>:&emsp;<span className="leadingVoteNumber">{this.state.leadingNumberLists[i]}</span> Votes
+          </pre>
+        }
+      } else {
+        detail = <pre className = "highestVote">{this.state.leadingVoteLists[i]}</pre>
+      }
       items.push(<Link key={i} to={{pathname: "/details",
           state: {title: "Food", eventTitle: this.state.voteList[i], userId: this.props.id }}}>
         <li className = "listItemVote">{this.state.voteList[i]}
-        <pre className = "highestVote">{this.state.leadingVoteLists[i]}
-        </pre>
+        {detail}
         </li>
       </Link>)
     }

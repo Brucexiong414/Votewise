@@ -1,12 +1,13 @@
 import React, {Component} from "react";
 import {Modal} from 'react-bootstrap';
+import "./CardStyle.css"
 import {Link} from "react-router-dom";
 import { API } from "aws-amplify";
-import "./CardStyle.css"
+
 import IsLoading from "./isLoading"
 
 
-class MovieCard extends Component {
+class FoodCard extends Component {
   constructor(props) {
     super(props);
 
@@ -18,6 +19,9 @@ class MovieCard extends Component {
 
     this.state = {
       voteList: [],
+      leadingVoteLists: [],
+      leadingNumberLists: [],
+      numberOfOptions: [],
       show: false,
       currentTitle: "",
       currentTime: "",
@@ -28,8 +32,11 @@ class MovieCard extends Component {
     async componentDidMount() {
         try {
             const votes = await this.votes();
+
             let items = [];
             let leadingVotes = [];
+            let leadingNumbers = [];
+            let numbers = [];
             for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
                 if (votes[i].category === "movies") {
                     items.push(votes[i].event);
@@ -43,15 +50,22 @@ class MovieCard extends Component {
                         }
                       }
                       leadingVotes.push(votes[i].choices[index].name);
+                      leadingNumbers.push(max);
+                      numbers.push(choices.length);
                     } else {
                       leadingVotes.push("No option created.");
+                      leadingVotes.push(0);
+                      numbers.push(0);
                     }
                 }
             }
+
             this.setState({
                 voteList: items,
                 isLoading: false,
-                leadingVoteLists: leadingVotes
+                leadingVoteLists: leadingVotes,
+                leadingNumberLists: leadingNumbers,
+                numberOfOptions: numbers
             });
         } catch (e) {
             alert(e);
@@ -66,8 +80,31 @@ class MovieCard extends Component {
     this.setState({show: false});
   }
 
-  async handleSubmit(event) {
+
+  handleSubmit = async event => {
     event.preventDefault();
+
+    if (this.state.currentTitle.length < 3) {
+      alert('please enter a valid event name');
+      this.setState({
+        currentTitle: "",
+        currentTime: ""
+      });
+
+      return;
+    }
+
+    let timeRegex = /^$|^(([01][0-9])|(2[0-3])):[0-5][0-9]$/;
+
+    if (!timeRegex.test(this.state.currentTime)) {
+      alert('Please use 24h time system in a format HH:MM');
+      this.setState({
+        currentTime: ""
+      });
+
+      return;
+    }
+
     let result = "";
 
     result += this.state.currentTitle;
@@ -77,21 +114,29 @@ class MovieCard extends Component {
     let newList = this.state.voteList;
     newList.push(result);
 
-      let temp = this.state.leadingVoteLists;
-      temp.push("No option created.");
+    let temp = this.state.leadingVoteLists;
+    temp.push("No option created.")
+
+    let tmp = this.state.leadingNumberLists;
+    tmp.push(0);
+
+    let num = this.state.numberOfOptions;
+    num.push(0);
 
     this.setState({
       voteList: newList,
       currentTitle: "",
       currentTime: "",
       show: false,
-        leadingVoteLists: temp
+      leadingVoteLists: temp,
+      leadingNumberLists: tmp,
+      numberOfOptions: num
     });
 
       try {
-          await this.createEvent({
+           await this.createEvent({
               event: this.state.voteList[this.state.voteList.length - 1],
-              category: "movie"
+              category: "food"
           });
       } catch (e) {
           alert(e);
@@ -104,6 +149,7 @@ class MovieCard extends Component {
       } catch (e) {
           alert(e);
       }
+
   }
 
     votes() {
@@ -178,13 +224,30 @@ class MovieCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
+      let detail;
+      if (this.state.numberOfOptions[i] > 0) {
+        if (this.state.numberOfOptions[i] > 1) {
+          detail = <pre className = "highestVote">
+          <span className="leadingVoteName">{this.state.leadingVoteLists[i]}</span>:&emsp;<span className="leadingVoteNumber">{this.state.leadingNumberLists[i]}</span> Votes
+          &nbsp;<span className="otherOptions">{this.state.numberOfOptions[i] - 1} other option{this.state.numberOfOptions[i] > 2 ? "s" : ""} available</span>
+          </pre>
+        } else {
+          detail = <pre className = "highestVote">
+          <span className="leadingVoteName">{this.state.leadingVoteLists[i]}</span>:&emsp;<span className="leadingVoteNumber">{this.state.leadingNumberLists[i]}</span> Votes
+          </pre>
+        }
+      } else {
+        detail = <pre className = "highestVote">{this.state.leadingVoteLists[i]}</pre>
+      }
       items.push(<Link key={i} to={{pathname: "/details",
-          state: { title: "Movie", eventTitle: this.state.voteList[i], userId: this.props.id  }}}>
-      <li className = "listItemVote">{this.state.voteList[i]} <pre className = "highestVote">{this.state.leadingVoteLists[i]}</pre> </li>
+          state: {title: "Movie", eventTitle: this.state.voteList[i], userId: this.props.id }}}>
+        <li className = "listItemVote">{this.state.voteList[i]}
+        {detail}
+        </li>
       </Link>)
     }
     return (<div>{items}</div>)
   }
 }
 
-export default MovieCard;
+export default FoodCard;

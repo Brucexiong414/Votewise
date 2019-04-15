@@ -18,6 +18,9 @@ class MeetingCard extends Component {
 
     this.state = {
       voteList: [],
+      leadingVoteLists: [],
+      leadingNumberLists: [],
+      numberOfOptions: [],
       show: false,
       currentTitle: "",
       currentTime: "",
@@ -25,38 +28,48 @@ class MeetingCard extends Component {
     }
   }
 
-  async componentDidMount() {
-    try {
-      const votes = await this.votes();
-      let items = [];
-      let leadingVotes = [];
-      for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
-        if (votes[i].category === "meeting") {
-          items.push(votes[i].event);
-          let choices = votes[i].choices;
-          if (choices) {
-            var max = -1, index = 0;
-            for (let j = 0; j < choices.length; j++) {
-              if (choices[j].currentVote > max) {
-                max = choices[j].currentVote;
-                index = j;
-              }
+    async componentDidMount() {
+        try {
+            const votes = await this.votes();
+
+            let items = [];
+            let leadingVotes = [];
+            let leadingNumbers = [];
+            let numbers = [];
+            for (let i = 0; i < votes.length; i++) {  // query from data base to list all events
+                if (votes[i].category === "meeting") {
+                    items.push(votes[i].event);
+                    let choices = votes[i].choices;
+                    if (choices) {
+                      var max = -1, index = 0;
+                      for (let j = 0; j < choices.length; j++) {
+                        if (choices[j].currentVote > max) {
+                          max = choices[j].currentVote;
+                          index = j;
+                        }
+                      }
+                      leadingVotes.push(votes[i].choices[index].name);
+                      leadingNumbers.push(max);
+                      numbers.push(choices.length);
+                    } else {
+                      leadingVotes.push("No option created.");
+                      leadingVotes.push(0);
+                      numbers.push(0);
+                    }
+                }
             }
-            leadingVotes.push(votes[i].choices[index].name);
-          } else {
-            leadingVotes.push("No option created.");
-          }
+
+            this.setState({
+                voteList: items,
+                isLoading: false,
+                leadingVoteLists: leadingVotes,
+                leadingNumberLists: leadingNumbers,
+                numberOfOptions: numbers
+            });
+        } catch (e) {
+            alert(e);
         }
-      }
-      this.setState({
-        voteList: items,
-        isLoading: false,
-        leadingVoteLists: leadingVotes
-      });
-    } catch (e) {
-      alert(e);
     }
-  }
 
   handleShow() {
     this.setState({show: true});
@@ -79,15 +92,21 @@ class MeetingCard extends Component {
 
       let temp = this.state.leadingVoteLists;
       temp.push("No option created.");
+      let tmp = this.state.leadingNumberLists;
+      tmp.push(0);
 
+      let num = this.state.numberOfOptions;
+      num.push(0);
 
-    this.setState({
-      voteList: newList,
-      currentTitle: "",
-      currentTime: "",
-      show: false,
-        leadingVoteLists: temp
-    });
+      this.setState({
+        voteList: newList,
+        currentTitle: "",
+        currentTime: "",
+        show: false,
+        leadingVoteLists: temp,
+        leadingNumberLists: tmp,
+        numberOfOptions: num
+      });
 
     try {
       await this.createEvent({
@@ -185,11 +204,25 @@ class MeetingCard extends Component {
   renderItems() {
     let items = [];
     for (let i = 0; i < this.state.voteList.length; i++) {
-      items.push(<Link key={i}
-                       to={{pathname: "/details",
-                           state: {title: "Meeting", eventTitle: this.state.voteList[i], userId: this.props.id }}}>
-        <li className="listItemVote">{this.state.voteList[i]}
-          <pre className="highestVote">{this.state.leadingVoteLists[i]}</pre>
+      let detail;
+      if (this.state.numberOfOptions[i] > 0) {
+        if (this.state.numberOfOptions[i] > 1) {
+          detail = <pre className = "highestVote">
+          <span className="leadingVoteName">{this.state.leadingVoteLists[i]}</span>:&emsp;<span className="leadingVoteNumber">{this.state.leadingNumberLists[i]}</span> Votes
+          &nbsp;<span className="otherOptions">{this.state.numberOfOptions[i] - 1} other option{this.state.numberOfOptions[i] > 2 ? "s" : ""} available</span>
+          </pre>
+        } else {
+          detail = <pre className = "highestVote">
+          <span className="leadingVoteName">{this.state.leadingVoteLists[i]}</span>:&emsp;<span className="leadingVoteNumber">{this.state.leadingNumberLists[i]}</span> Votes
+          </pre>
+        }
+      } else {
+        detail = <pre className = "highestVote">{this.state.leadingVoteLists[i]}</pre>
+      }
+      items.push(<Link key={i} to={{pathname: "/details",
+          state: {title: "Meeting", eventTitle: this.state.voteList[i], userId: this.props.id }}}>
+        <li className = "listItemVote">{this.state.voteList[i]}
+        {detail}
         </li>
       </Link>)
     }

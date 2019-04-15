@@ -6,9 +6,22 @@
 
 .highestVote{
   background-color: #18AFC7;
-  color: white;
+  color: #485768;
   font-size: 100%;
   border-radius: 8px;
+}
+
+.leadingVoteName{
+  color: white;
+}
+
+.otherOptions{
+  color: white;
+  font-size: 80%
+}
+
+.leadingVoteNumber{
+  color: white;
 }
 
 .listItemVote{
