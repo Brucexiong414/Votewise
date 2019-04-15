@@ -141,7 +141,7 @@ class TimeCard extends Component {
             View History
           </Link>
           <div className="modal-container">
-            <button className="myButton" onClick={this.handleShow}/>
+            <button className="myButton" onClick={this.handleShow}> Create New Event</button>
             <Modal
               show={this.state.show}
               onHide={this.handleHide}

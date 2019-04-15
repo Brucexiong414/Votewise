@@ -68,6 +68,31 @@
 }
 
 .myButton{
+  -webkit-appearance: none;
+  display: inline-block;
+  border-radius: 8px;
+  background: #006989;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 150%;
+  padding: .75rem 1.25rem;
+  margin: 0 0 .5rem 0;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  position:relative;
+  left:43%
+}
+
+.myButton:hover{
+  background: #177D9A;
+  color: #ffffff;
+  text-decoration: none;
+}
+/*
+.myButton{
     background:url(../baseline_add_circle_outline_black_36dp.png) no-repeat;
     position:relative;
     left: 46%;
@@ -83,6 +108,7 @@
     background:url(../baseline_add_circle_outline_black_36dp.png) no-repeat;
     border:none
 }
+*/
 
 .historyLink{
     background-color: #DCE4D7;
